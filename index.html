@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>360° Virtual Tours Portfolio | NewBharatSkills</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0a58ca;
+            --secondary: #ff6b00;
+            --dark: #333;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+
+        /* Header Styles - Matching NewBharatSkills */
+        header {
+            background-color: var(--white);
+            padding: 1rem 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .logo-text {
+            color: var(--dark);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-left: 10px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+
+        nav ul li a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 0;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+
+        .mobile-menu {
+            display: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(10, 88, 202, 0.8), rgba(10, 88, 202, 0.9)), url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+            padding: 5rem 0;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 0.8rem 1.8rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #e55a00;
+            transform: translateY(-3px);
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Project Styles */
+        .project {
+            display: flex;
+            margin-bottom: 5rem;
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-content {
+            flex: 1;
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .project-iframe {
+            flex: 1.2;
+            min-height: 400px;
+        }
+
+        .project-iframe iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .project h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-category {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .project p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Alternating Layout */
+        .project:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .project:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 3rem 0 1.5rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .project {
+                flex-direction: column !important;
+            }
+            
+            .project-iframe {
+                min-height: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .logo {
+                margin-bottom: 1rem;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+            }
+
+            nav ul li {
+                margin: 0 0.8rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .project-content {
+                padding: 1.5rem;
+            }
+
+            .project h3 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .mobile-menu {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                width: 100%;
+                margin-top: 1rem;
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+
+            .hero {
+                padding: 3rem 0;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .portfolio {
+                padding: 3rem 0;
+            }
+
+            .project {
+                margin-bottom: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="image/New-BharatSkills-logo-removebg-preview.png" alt="NewBharatSkills Logo">
+                    <div class="logo-text">JHA 360°</div>
+                </div>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="https://newbharatskills.in/" id="about-bar">Home</a></li>
+                        <li><a href="https://newbharatskills.in/courses.html">Services</a></li>
+                        <li><a href="https://newbharatskills.in/NBS360.html">JHA 360°</a></li>
+                        <li><a href="https://newbharatskills.in/workshops.html">Workshops</a></li>
+                        <li><a href="https://newbharatskills.in/franchise.html">JHAMU Technologies</a></li>
+                        <li><a href="https://piyushnjha.com/view_blogs.php">Blog</a></li>
+                        <li><a href="https://newbharatskills.in/aboutus.html">About Us</a></li>
+                        <li><a href="https://newbharatskills.in/contact.php">Contact</a></li>
+                        <li><a href="https://newbharatskills.in/workshops.html" class="cta">Enroll Now</a></li>
+                        
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="padding: 2.5rem 0;">
+        <div class="container">
+            <h1>360° Virtual Business Tours</h1>
+            <p>Immersive virtual experiences that showcase your business in stunning detail. Explore our portfolio of interactive 360° tours for various industries.</p>
+            <a href="#portfolio" class="btn">View Our Work</a>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Virtual Tour Projects</h2>
+                <p>Explore our collection of 360° virtual tours that bring businesses to life. Each tour is fully interactive and accessible directly on this page.</p>
+            </div>
+
+            <!-- Project 1 -->
+            <div class="project">
+                <div class="project-content">
+                    <h3>ZenXFit (Vashi)</h3>
+                    <span class="project-category">GYM Segment</span>
+                    <p>Experience the state-of-the-art fitness facilities at ZenXFit through our immersive 360° virtual tour. Explore the cutting-edge equipment, spacious workout areas, and premium amenities that make this gym stand out.</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Vashi, Navi Mumbai</p>
+                </div>
+                <div class="project-iframe">
+                    <!-- Embedded 360° Tour -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!4v1762764890343!6m8!1m7!1sCAoSHENJQUJJaEJtZ2pLTl8zU1FmUnFCZ1JVNnhmMS0.!2m2!1d19.07122938657579!2d72.99716010829314!3f338.78!4f-7.530000000000001!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project">
+                <div class="project-content">
+                    <h3>K Rocks Resort Lakeside Camping (Pune)</h3>
+                    <span class="project-category">Resort Segment</span>
+                    <p>Immerse yourself in the natural beauty and luxury of K Rocks Resort. Our 360° virtual tour showcases the stunning lakeside views, comfortable camping setups, and recreational facilities that make this resort a perfect getaway.</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra</p>
+                </div>
+                <div class="project-iframe">
+                    <!-- Embedded 360° Tour -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!4v1762763056736!6m8!1m7!1sCAoSHENJQUJJaERreXBUdkJQSXBtdlZnR0Jpa3lpbUo.!2m2!1d18.62227175548513!2d73.65628736485378!3f263.72!4f6.840000000000003!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project">
+                <div class="project-content">
+                    <h3>Peshwai Silk Sarees Pvt. Ltd. (Vashi)</h3>
+                    <span class="project-category">Store Segment</span>
+                    <p>Step into the world of exquisite traditional wear with our 360° virtual tour of Peshwai Silk Sarees. Explore their extensive collection of silk sarees, designer wear, and accessories in stunning detail from the comfort of your home.</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Vashi, Navi Mumbai</p>
+                </div>
+                <div class="project-iframe">
+                    <!-- Embedded 360° Tour -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!4v1762763085849!6m8!1m7!1sCAoSHENJQUJJaERwckM0N1RteENQcGdPWTFUOHZtWUQ.!2m2!1d19.07145255830345!2d73.0012560715027!3f186.38!4f9.150000000000006!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project">
+                <div class="project-content">
+                    <h3>Upper Deck Sky Lounge</h3>
+                    <span class="project-category">Restaurant Segment</span>
+                    <p>Experience fine dining with a view at Upper Deck Sky Lounge. Our 360° virtual tour captures the elegant ambiance, stunning city views, and sophisticated interiors that make this restaurant a premier dining destination.</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Mumbai, Maharashtra</p>
+                </div>
+                <div class="project-iframe">
+                    <!-- Embedded 360° Tour -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!4v1762765120661!6m8!1m7!1sCAoSHENJQUJJaEJVSnJ4Y2x2Z3VKX2dERFAxSEZYak8.!2m2!1d19.02460241876932!2d73.02216262154366!3f340!4f0!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>NewBharatSkills</h3>
+                    <p>Empowering businesses with cutting-edge digital solutions and immersive virtual experiences.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/newbharatskills/"><div><i class="fa-brands fa-instagram"></i></div></a>
+                        <a href="https://www.linkedin.com/company/new-bharat-skills/"><div><i class="fa-brands fa-linkedin"></i></div></a>
+                        <a href="https://www.youtube.com/@NewBharatSkills"><div><i class="fa-brands fa-youtube"></i></div></a>
+                        <a href="https://api.whatsapp.com/send/?phone=918369397726&text&type=phone_number&app_absent=0"><div><i class="fa-brands fa-whatsapp"></i></div></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                                <li><a href="https://newbharatskills.in/aboutus.html">About Us</a></li>
+                                <li><a href="https://newbharatskills.in/courses.html">Services</a></li>
+                                <li><a href="https://newbharatskills.in/NBS360.html">NBS 360°</a></li>
+                                <li><a href="https://newbharatskills.in/workshops.html">Workshops</a></li>
+                                <li><a href="https://newbharatskills.in/franchise.html">Jhamu technologies</a></li>
+                                <li><a href="https://newbharatskills.in/terms-condition.html">Terms and Conditions</a></li>
+                                <li><a href="https://newbharatskills.in/privacy-policy.html">privacy policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Mumbai, Maharashtra</li>
+                        <li><i class="fas fa-phone"></i> +91 8369397726</li>
+                        <li><i class="fas fa-envelope"></i> office@newbharatskills.in</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 NewBharatSkills. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('active');
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.querySelector('nav').classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
