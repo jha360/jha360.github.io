@@ -199,35 +199,64 @@
             border: none;
         }
 
-        /* Hero Section */
+        /* Updated Hero Section with Video Background - Fixed Height and Alignment */
         .hero {
-            background: linear-gradient(rgba(10, 88, 202, 0.85), rgba(10, 88, 202, 0.95));
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: var(--white);
-            text-align: center;
-            padding: 3rem 0;
             position: relative;
+            height: 60vh;
+            min-height: 400px;
+            max-height: 800px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
             overflow: hidden;
         }
 
-        .hero::before {
-            content: '';
+        .hero-video {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background:#0a58ca;
-            opacity: 0.3;
+            object-fit: cover;
+            z-index: -2;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                rgba(10, 88, 202, 0.85), 
+                rgba(10, 88, 202, 0.75)
+            );
+            z-index: -1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            padding: 2rem;
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         .hero h1 {
             font-size: 3rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             position: relative;
             animation: fadeInUp 0.8s ease;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            line-height: 1.2;
+            width: 100%;
         }
 
         .hero p {
@@ -236,10 +265,14 @@
             margin: 0 auto 2rem;
             position: relative;
             animation: fadeInUp 1s ease;
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+            opacity: 0.95;
+            line-height: 1.6;
+            width: 100%;
         }
 
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
+            from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
@@ -247,16 +280,19 @@
             display: inline-block;
             background-color: var(--secondary);
             color: var(--white);
-            padding: 0.8rem 1.8rem;
+            padding: 0.9rem 2rem;
             border-radius: 4px;
             text-decoration: none;
             font-weight: 600;
+            font-size: 1.1rem;
             transition: var(--transition);
             border: none;
             cursor: pointer;
             position: relative;
             overflow: hidden;
             animation: fadeInUp 1.2s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
+            letter-spacing: 0.5px;
         }
 
         .btn::after {
@@ -291,7 +327,7 @@
         .btn:hover {
             background-color: #e55a00;
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
 
         /* Google Street View Trusted Agency Section */
@@ -821,12 +857,21 @@
                 margin: 0.5rem 0.8rem;
             }
 
+            /* Updated Hero Responsive Styles */
+            .hero {
+                height: 70vh;
+                min-height: 500px;
+            }
+
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
             }
 
             .hero p {
-                font-size: 1rem;
+                font-size: 1.1rem;
+                margin-bottom: 2rem;
+                padding: 0 1rem;
             }
 
             .section-title h2 {
@@ -883,20 +928,35 @@
                 padding: 0.5rem;
             }
 
+            /* Updated Hero Mobile Styles */
             .hero {
-                padding: 3rem 0;
+                height: 65vh;
+                min-height: 450px;
             }
 
             .hero h1 {
-                font-size: 1.8rem;
+                font-size: 2rem;
+                margin-bottom: 1rem;
+                padding: 0 1rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+                padding: 0 1rem;
+            }
+
+            .btn {
+                padding: 0.8rem 1.6rem;
+                font-size: 1rem;
             }
 
             .portfolio, .trusted-agency, .cta-section {
-                padding: 3rem 0;
+                padding: 2.5rem 0;
             }
 
             .project {
-                margin-bottom: 3rem;
+                margin-bottom: 2.5rem;
             }
             
             .back-to-top {
@@ -905,6 +965,23 @@
                 width: 40px;
                 height: 40px;
                 font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .hero {
+                height: 60vh;
+                min-height: 400px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+                padding: 0 0.5rem;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+                padding: 0 0.5rem;
             }
         }
     </style>
@@ -945,12 +1022,24 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Updated Hero Section with Video Background -->
+    <section class="hero" id="main-content">
+        <!-- Background Video -->
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="https://newbharatskills.in/hero-video.mp4" type="video/mp4">
+            <!-- Fallback image if video doesn't load -->
+        </video>
+        
+        <!-- Overlay -->
+        <div class="hero-overlay"></div>
+        
+        <!-- Hero Content -->
         <div class="container">
-            <h1>360° Virtual Business Tours</h1>
-            <p>Immersive virtual experiences that showcase your business in stunning detail. Explore our portfolio of interactive 360° tours for various industries.</p>
-            <a href="#portfolio" class="btn">View Our Work</a>
+            <div class="hero-content">
+                <h1>360° Virtual Business Tours</h1>
+                <p>Immersive virtual experiences that showcase your business in stunning detail. Explore our portfolio of interactive 360° tours for various industries across India.</p>
+                <a href="#portfolio" class="btn">View Our Work</a>
+            </div>
         </div>
     </section>
 
@@ -1266,6 +1355,30 @@
             link.as = 'style';
             document.head.appendChild(link);
         });
+
+        // Video fallback for browsers that don't support autoplay
+        const heroVideo = document.querySelector('.hero-video');
+        if (heroVideo) {
+            heroVideo.addEventListener('error', function() {
+                // If video fails to load, show fallback image
+                const fallbackImg = document.createElement('div');
+                fallbackImg.style.backgroundImage = 'url(https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80)';
+                fallbackImg.style.position = 'absolute';
+                fallbackImg.style.top = '0';
+                fallbackImg.style.left = '0';
+                fallbackImg.style.width = '100%';
+                fallbackImg.style.height = '100%';
+                fallbackImg.style.backgroundSize = 'cover';
+                fallbackImg.style.backgroundPosition = 'center';
+                fallbackImg.style.zIndex = '-2';
+                heroVideo.parentNode.insertBefore(fallbackImg, heroVideo);
+            });
+            
+            // Ensure video plays on mobile
+            heroVideo.setAttribute('playsinline', '');
+            heroVideo.setAttribute('muted', '');
+            heroVideo.setAttribute('autoplay', '');
+        }
     </script>
 </body>
 </html>
