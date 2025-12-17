@@ -4,14 +4,14 @@
     <!-- Improved Meta Tags for SEO -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="JHA360 creates immersive 360° virtual tours for businesses. Explore our portfolio of virtual tours for gyms, resorts, stores, and restaurants across India.">
+    <meta name="description" content="JHA360 creates immersive 360 virtual tours for businesses. Explore our portfolio of virtual tours for gyms, resorts, stores, and restaurants across India.">
     <meta name="keywords" content="360 virtual tour, virtual business tours, Google Street View, immersive experiences, virtual reality tours, business visualization">
     <meta name="author" content="JHA360 - NewBharatSkills">
     <meta name="robots" content="index, follow">
     
     <!-- Open Graph Tags for Social Media -->
-    <meta property="og:title" content="JHA360 | 360° Virtual Tours Portfolio">
-    <meta property="og:description" content="Immersive 360° virtual tours that showcase businesses in stunning detail. Explore our portfolio of interactive virtual experiences.">
+    <meta property="og:title" content="JHA360 | 360 Virtual Tours Portfolio">
+    <meta property="og:description" content="Immersive 360 virtual tours that showcase businesses in stunning detail. Explore our portfolio of interactive virtual experiences.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://jha360.com/">
     
@@ -40,7 +40,7 @@
       "name": "JHA360",
       "url": "https://jha360.com/",
       "logo": "https://jha360.com/New-BharatSkills-logo-removebg-preview.png",
-      "description": "Provider of immersive 360° virtual tours for businesses across India",
+      "description": "Provider of immersive 360 virtual tours for businesses across India",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Mumbai",
@@ -61,7 +61,7 @@
     }
     </script>
     
-    <title>JHA360 | 360° Virtual Tours Portfolio | Google Street View Trusted Agency</title>
+    <title>JHA360 | 360 Virtual Tours Portfolio | Google Street View Trusted Agency</title>
     
     <style>
         /* Reset and Base Styles */
@@ -229,6 +229,7 @@
             left: 0;
             width: 100%;
             height: 100%;
+           
             z-index: -1;
         }
 
@@ -517,7 +518,7 @@
 
         /* Loading animation for iframes */
         .project-iframe::before {
-            content: 'Loading 360° Tour...';
+            content: 'Loading 360 Tour...';
             position: absolute;
             top: 0;
             left: 0;
@@ -800,6 +801,199 @@
                 padding: 1.25rem;
             }
         }
+        
+        /* Christmas Popup Styles - ADDED HERE */
+        /* Overlay Styles */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 9998;
+            backdrop-filter: blur(2px);
+            animation: fadeIn 0.4s ease;
+        }
+
+        .popup-overlay.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Popup Container */
+        .popup-container {
+            position: relative;
+            width: 90vw;
+            max-width: 900px;
+            aspect-ratio: 16 / 9;
+            background: #FFFFFF;
+            border-radius: 16px;
+            overflow: hidden;
+            z-index: 9999;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: scaleIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        /* Main Popup Image */
+        .popup-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        /* Close Button */
+        .popup-close-btn {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 44px;
+            height: 44px;
+            background-color: rgba(255, 255, 255, 0.95);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #C62828;
+            transition: all 0.3s ease;
+            z-index: 10000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .popup-close-btn:hover {
+            background-color: #FFFFFF;
+            transform: rotate(90deg) scale(1.1);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+        }
+
+        .popup-close-btn:active {
+            transform: rotate(90deg) scale(0.95);
+        }
+
+        /* Contact CTA Button */
+        .popup-contact-btn {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            padding: 12px 28px;
+            background-color: #C62828;
+            color: #FFFFFF;
+            border: 2px solid #C62828;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 16px rgba(198, 40, 40, 0.3);
+            z-index: 10000;
+            letter-spacing: 0.5px;
+        }
+
+        .popup-contact-btn:hover {
+            background-color: #A01E1E;
+            border-color: #A01E1E;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(198, 40, 40, 0.4);
+        }
+
+        .popup-contact-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 12px rgba(198, 40, 40, 0.3);
+        }
+
+        /* Christmas Popup Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.85) translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        /* Prevent body scroll when popup is open */
+        body.popup-open {
+            overflow: hidden;
+        }
+
+        /* Responsive Tablet (768px and below) */
+        @media (max-width: 768px) {
+            .popup-container {
+                width: 95vw;
+                max-width: 800px;
+                border-radius: 12px;
+            }
+
+            .popup-close-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+                top: 12px;
+                right: 12px;
+            }
+
+            .popup-contact-btn {
+                bottom: 16px;
+                right: 16px;
+                padding: 10px 24px;
+                font-size: 13px;
+            }
+        }
+
+        /* Responsive Mobile (480px and below) */
+        @media (max-width: 480px) {
+            .popup-container {
+                width: 98vw;
+                max-width: 100%;
+                max-height: 85vh;
+                border-radius: 8px;
+            }
+
+            .popup-close-btn {
+                width: 36px;
+                height: 36px;
+                font-size: 18px;
+                top: 10px;
+                right: 10px;
+            }
+
+            .popup-contact-btn {
+                bottom: 12px;
+                right: 12px;
+                padding: 9px 20px;
+                font-size: 12px;
+            }
+        }
+
+        /* Accessibility */
+        .popup-close-btn:focus,
+        .popup-contact-btn:focus {
+            outline: 3px solid #D4AF37;
+            outline-offset: 2px;
+        }
+
         /* Responsive Design */
         @media (max-width: 1100px) {
             .agency-content {
@@ -1032,8 +1226,8 @@
         <!-- Hero Content -->
         <div class="container">
             <div class="hero-content">
-                <h1>360° Virtual Business Tours</h1>
-                <p>Immersive virtual experiences that showcase your business in stunning detail. Explore our portfolio of interactive 360° tours for various industries across India.</p>
+                <h1>360 Virtual Business Tours</h1>
+                <p>Immersive virtual experiences that showcase your business in stunning detail. Explore our portfolio of interactive 360 tours for various industries across India.</p>
                 <a href="#portfolio" class="btn">View Our Work</a>
             </div>
         </div>
@@ -1045,7 +1239,7 @@
             <div class="agency-content">
                 <div class="agency-text">
                     <h2>Google Street View Trusted Agency</h2>
-                    <p>As an official Google Street View Trusted Agency, we provide professional 360° virtual tour services that meet Google's stringent quality standards. Our certified photographers use state-of-the-art equipment to capture your business in stunning detail.</p>
+                    <p>As an official Google Street View Trusted Agency, we provide professional 360 virtual tour services that meet Google's stringent quality standards. Our certified photographers use state-of-the-art equipment to capture your business in stunning detail.</p>
                     <p>When you choose JHA360, you're not just getting a virtual tour – you're getting a Google-verified experience that can be featured on Google Maps and Google Search, increasing your online visibility and credibility.</p>
                     
                     <div class="benefits">
@@ -1080,22 +1274,22 @@
         <div class="container">
             <div class="section-title">
                 <h2>Our Virtual Tour Projects</h2>
-                <p>Explore our collection of 360° virtual tours that bring businesses to life. Each tour is fully interactive and accessible directly on this page.</p>
+                <p>Explore our collection of 360 virtual tours that bring businesses to life. Each tour is fully interactive and accessible directly on this page.</p>
             </div>
             <!-- project1 -->
             <div class="project">
                 <div class="project-content">
                     <h3>Vinayak Aangan - Pushpak Nagar</h3>
                     <span class="project-category">Real Estate</span>
-                    <p>Discover the elegance of Vinayak Aangan through our comprehensive 360° virtual tour. Explore the well-designed residential spaces, modern amenities, and beautiful surroundings that make this project an ideal living destination.</p>
+                    <p>Discover the elegance of Vinayak Aangan through our comprehensive 360 virtual tour. Explore the well-designed residential spaces, modern amenities, and beautiful surroundings that make this project an ideal living destination.</p>
                     <div class="project-location">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>Pushpak Nagar, Navi Mumbai</span>
+                        <span>Pushpak Nagar, Nashik</span>
                     </div>
                 </div>
                 <div class="project-iframe" id="tour-2">
-                    <!-- Embedded 360° Tour -->
-                    <iframe src="https://www.google.com/maps/embed?pb=!4v1765255905010!6m8!1m7!1sCAoSHENJQUJJaEMzelJidXl0dThtcmRjbU5XcmVKWDc.!2m2!1d18.97354302039362!2d73.07672906024942!3f294.09203839585194!4f-3.4537517131779794!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" title="360° Virtual Tour of Vinayak Aangan - Pushpak Nagar" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <!-- Embedded 360 Tour -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!4v1765255905010!6m8!1m7!1sCAoSHENJQUJJaEMzelJidXl0dThtcmRjbU5XcmVKWDc.!2m2!1d18.97354302039362!2d73.07672906024942!3f294.09203839585194!4f-3.4537517131779794!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" title="360 Virtual Tour of Vinayak Aangan - Pushpak Nagar" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
 
@@ -1104,15 +1298,15 @@
                 <div class="project-content">
                     <h3>ZenXFit (Vashi)</h3>
                     <span class="project-category">GYM Segment</span>
-                    <p>Experience the state-of-the-art fitness facilities at ZenXFit through our immersive 360° virtual tour. Explore the cutting-edge equipment, spacious workout areas, and premium amenities that make this gym stand out.</p>
+                    <p>Experience the state-of-the-art fitness facilities at ZenXFit through our immersive 360 virtual tour. Explore the cutting-edge equipment, spacious workout areas, and premium amenities that make this gym stand out.</p>
                     <div class="project-location">
                         <i class="fas fa-map-marker-alt"></i>
                         <span>Vashi, Navi Mumbai</span>
                     </div>
                 </div>
                 <div class="project-iframe" id="tour-1">
-                    <!-- Embedded 360° Tour -->
-                    <iframe src="https://www.google.com/maps/embed?pb=!4v1762764890343!6m8!1m7!1sCAoSHENJQUJJaEJtZ2pLTl8zU1FmUnFCZ1JVNnhmMS0.!2m2!1d19.07122938657579!2d72.99716010829314!3f338.78!4f-7.530000000000001!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" title="360° Virtual Tour of ZenXFit Gym" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <!-- Embedded 360 Tour -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!4v1762764890343!6m8!1m7!1sCAoSHENJQUJJaEJtZ2pLTl8zU1FmUnFCZ1JVNnhmMS0.!2m2!1d19.07122938657579!2d72.99716010829314!3f338.78!4f-7.530000000000001!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" title="360 Virtual Tour of ZenXFit Gym" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
 
@@ -1121,15 +1315,15 @@
                 <div class="project-content">
                     <h3>K Rocks Resort Lakeside Camping (Pune)</h3>
                     <span class="project-category">Resort Segment</span>
-                    <p>Immerse yourself in the natural beauty and luxury of K Rocks Resort. Our 360° virtual tour showcases the stunning lakeside views, comfortable camping setups, and recreational facilities that make this resort a perfect getaway.</p>
+                    <p>Immerse yourself in the natural beauty and luxury of K Rocks Resort. Our 360 virtual tour showcases the stunning lakeside views, comfortable camping setups, and recreational facilities that make this resort a perfect getaway.</p>
                     <div class="project-location">
                         <i class="fas fa-map-marker-alt"></i>
                         <span>Pune, Maharashtra</span>
                     </div>
                 </div>
                 <div class="project-iframe" id="tour-2">
-                    <!-- Embedded 360° Tour -->
-                    <iframe src="https://www.google.com/maps/embed?pb=!4v1762763056736!6m8!1m7!1sCAoSHENJQUJJaERreXBUdkJQSXBtdlZnR0Jpa3lpbUo.!2m2!1d18.62227175548513!2d73.65628736485378!3f263.72!4f6.840000000000003!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" title="360° Virtual Tour of K Rocks Resort" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <!-- Embedded 360 Tour -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!4v1762763056736!6m8!1m7!1sCAoSHENJQUJJaERreXBUdkJQSXBtdlZnR0Jpa3lpbUo.!2m2!1d18.62227175548513!2d73.65628736485378!3f263.72!4f6.840000000000003!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" title="360 Virtual Tour of K Rocks Resort" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
 
@@ -1138,15 +1332,15 @@
                 <div class="project-content">
                     <h3>Peshwai Silk Sarees Pvt. Ltd. (Vashi)</h3>
                     <span class="project-category">Store Segment</span>
-                    <p>Step into the world of exquisite traditional wear with our 360° virtual tour of Peshwai Silk Sarees. Explore their extensive collection of silk sarees, designer wear, and accessories in stunning detail from the comfort of your home.</p>
+                    <p>Step into the world of exquisite traditional wear with our 360 virtual tour of Peshwai Silk Sarees. Explore their extensive collection of silk sarees, designer wear, and accessories in stunning detail from the comfort of your home.</p>
                     <div class="project-location">
                         <i class="fas fa-map-marker-alt"></i>
                         <span>Vashi, Navi Mumbai</span>
                     </div>
                 </div>
                 <div class="project-iframe" id="tour-3">
-                    <!-- Embedded 360° Tour -->
-                    <iframe src="https://www.google.com/maps/embed?pb=!4v1762763085849!6m8!1m7!1sCAoSHENJQUJJaERwckM0N1RteENQcGdPWTFUOHZtWUQ.!2m2!1d19.07145255830345!2d73.0012560715027!3f186.38!4f9.150000000000006!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" title="360° Virtual Tour of Peshwai Silk Sarees" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <!-- Embedded 360 Tour -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!4v1762763085849!6m8!1m7!1sCAoSHENJQUJJaERwckM0N1RteENQcGdPWTFUOHZtWUQ.!2m2!1d19.07145255830345!2d73.0012560715027!3f186.38!4f9.150000000000006!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" title="360 Virtual Tour of Peshwai Silk Sarees" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
 
@@ -1155,15 +1349,15 @@
                 <div class="project-content">
                     <h3>Upper Deck Sky Lounge</h3>
                     <span class="project-category">Restaurant Segment</span>
-                    <p>Experience fine dining with a view at Upper Deck Sky Lounge. Our 360° virtual tour captures the elegant ambiance, stunning city views, and sophisticated interiors that make this restaurant a premier dining destination.</p>
+                    <p>Experience fine dining with a view at Upper Deck Sky Lounge. Our 360 virtual tour captures the elegant ambiance, stunning city views, and sophisticated interiors that make this restaurant a premier dining destination.</p>
                     <div class="project-location">
                         <i class="fas fa-map-marker-alt"></i>
                         <span>Mumbai, Maharashtra</span>
                     </div>
                 </div>
                 <div class="project-iframe" id="tour-4">
-                    <!-- Embedded 360° Tour -->
-                    <iframe src="https://www.google.com/maps/embed?pb=!4v1762765120661!6m8!1m7!1sCAoSHENJQUJJaEJVSnJ4Y2x2Z3VKX2dERFAxSEZYak8.!2m2!1d19.02460241876932!2d73.02216262154366!3f340!4f0!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" title="360° Virtual Tour of Upper Deck Sky Lounge" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <!-- Embedded 360 Tour -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!4v1762765120661!6m8!1m7!1sCAoSHENJQUJJaEJVSnJ4Y2x2Z3VKX2dERFAxSEZYak8.!2m2!1d19.02460241876932!2d73.02216262154366!3f340!4f0!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" title="360 Virtual Tour of Upper Deck Sky Lounge" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
@@ -1175,7 +1369,7 @@
         <div class="container">
             <!-- Add section title here -->
             <div class="section-title">
-                <h2>Beyond 360° Tours</h2>
+                <h2>Beyond 360 Tours</h2>
                 <p>Explore our additional professional services designed to grow your business</p>
             </div>
             
@@ -1204,8 +1398,8 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
-            <h2>Ready to Showcase Your Business in 360°?</h2>
-            <p>Get your own professional virtual tour and join our satisfied clients. Increase engagement, build trust, and stand out from competitors with an immersive 360° experience.</p>
+            <h2>Ready to Showcase Your Business in 360?</h2>
+            <p>Get your own professional virtual tour and join our satisfied clients. Increase engagement, build trust, and stand out from competitors with an immersive 360 experience.</p>
             <a href="https://newbharatskills.in/contact.php" class="btn btn-light">Get Your Virtual Tour</a>
         </div>
     </section>
@@ -1246,6 +1440,39 @@
             </div>
         </div>
     </footer>
+
+    <!-- Christmas Popup - ADDED HERE -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-container">
+            <!-- Popup Image -->
+            <img 
+                src="nbsI.png" 
+                alt="Christmas Sale - 360 Virtual Tour Service"
+                class="popup-image"
+            >
+            
+            <!-- Close Button -->
+            <button 
+                class="popup-close-btn" 
+                id="popupCloseBtn"
+                aria-label="Close popup"
+                title="Close"
+            >
+                ✕
+            </button>
+
+            <!-- Contact CTA Button -->
+            <a 
+                href="https://newbharatskills.in/contact.php" 
+                class="popup-contact-btn"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Contact Us for 360 Virtual Tour"
+            >
+                Contact Us
+            </a>
+        </div>
+    </div>
 
     <script>
         // Mobile Menu Toggle
@@ -1391,11 +1618,97 @@
             heroVideo.setAttribute('muted', '');
             heroVideo.setAttribute('autoplay', '');
         }
+
+        // Christmas Popup Integration - ADDED HERE
+        const CHRISTMAS_POPUP_CONFIG = {
+            popupId: 'popupOverlay',
+            closeButtonId: 'popupCloseBtn',
+            storageKey: 'jha360_christmas_popup_closed',
+            delayMs: 1000, // Delay before showing popup (ms)
+            enabled: true // Set to false to disable popup
+        };
+
+        class ChristmasPopup {
+            constructor(config) {
+                this.config = config;
+                this.overlay = document.getElementById(config.popupId);
+                this.closeBtn = document.getElementById(config.closeButtonId);
+                this.init();
+            }
+
+            init() {
+                if (!this.config.enabled) return;
+
+                // Attach event listeners
+                this.closeBtn.addEventListener('click', () => this.close());
+                this.overlay.addEventListener('click', (e) => this.handleOverlayClick(e));
+
+                // Show popup with delay
+                this.showWithDelay();
+            }
+
+            showWithDelay() {
+                // Check if popup was already closed in this session
+                if (this.wasClosedThisSession()) {
+                    return;
+                }
+
+                setTimeout(() => {
+                    this.show();
+                }, this.config.delayMs);
+            }
+
+            show() {
+                this.overlay.classList.add('active');
+                document.body.classList.add('popup-open');
+            }
+
+            close() {
+                this.overlay.classList.remove('active');
+                document.body.classList.remove('popup-open');
+                
+                // Mark popup as closed in session storage
+                this.markAsClosedThisSession();
+            }
+
+            handleOverlayClick(e) {
+                // Close only if clicking on overlay, not the popup container
+                if (e.target === this.overlay) {
+                    this.close();
+                }
+            }
+
+            wasClosedThisSession() {
+                return sessionStorage.getItem(this.config.storageKey) === 'true';
+            }
+
+            markAsClosedThisSession() {
+                sessionStorage.setItem(this.config.storageKey, 'true');
+            }
+
+            // Public method to manually open popup
+            open() {
+                this.show();
+                sessionStorage.removeItem(this.config.storageKey);
+            }
+
+            // Public method to manually close popup
+            closePopup() {
+                this.close();
+            }
+        }
+
+        // Initialize Christmas popup when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            window.christmasPopup = new ChristmasPopup(CHRISTMAS_POPUP_CONFIG);
+        });
+
+        // Keyboard accessibility - close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && window.christmasPopup) {
+                window.christmasPopup.close();
+            }
+        });
     </script>
 </body>
 </html>
-
-
-
-
-
