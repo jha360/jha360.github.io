@@ -1,0 +1,43 @@
+# robots.txt for jha360.com
+# Reference: https://developers.google.com/search/docs/crawling-indexing/robots/intro
+
+# Allow all crawlers to access all content
+User-agent: *
+Disallow:
+
+# Sitemap location
+# Reference: https://www.sitemaps.org/protocol.html
+Sitemap: https://jha360.com/sitemap.xml
+
+# Crawl-delay (optional, only if needed to reduce server load)
+# Not setting this allows maximum crawl rate
+
+# Block AI training bots (optional - uncomment if desired)
+# User-agent: GPTBot
+# Disallow: /
+# 
+# User-agent: ChatGPT-User
+# Disallow: /
+# 
+# User-agent: CCBot
+# Disallow: /
+# 
+# User-agent: anthropic-ai
+# Disallow: /
+# 
+# User-agent: Claude-Web
+# Disallow: /
+
+# Allow Google Images to crawl images
+User-agent: Googlebot-Image
+Allow: /
+
+# Specific rules for common crawlers (all allowed)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
