@@ -1,19 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Improved Meta Tags for SEO -->
+   <!-- Enhanced Meta Tags for SEO - UPDATED -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="JHA360 creates immersive 360 virtual tours for businesses. Explore our portfolio of virtual tours for gyms, resorts, stores, and restaurants across India.">
     <meta name="keywords" content="360 virtual tour, virtual business tours, Google Street View, immersive experiences, virtual reality tours, business visualization">
     <meta name="author" content="JHA360 - NewBharatSkills">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     
-    <!-- Open Graph Tags for Social Media -->
+    <!-- Canonical URL - ADDED -->
+    <link rel="canonical" href="https://jha360.com/">
+    
+    <!-- Open Graph Tags for Social Media - ENHANCED -->
     <meta property="og:title" content="JHA360 | 360 Virtual Tours Portfolio">
     <meta property="og:description" content="Immersive 360 virtual tours that showcase businesses in stunning detail. Explore our portfolio of interactive virtual experiences.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://jha360.com/">
+    <meta property="og:image" content="https://jha360.com/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="JHA360 - Professional 360 Virtual Tours">
+    <meta property="og:site_name" content="JHA360">
+    <meta property="og:locale" content="en_IN">
+    
+    <!-- Twitter Card Tags - ADDED -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="JHA360 | 360 Virtual Tours Portfolio">
+    <meta name="twitter:description" content="Immersive 360 virtual tours that showcase businesses in stunning detail. Official Google Street View Trusted Agency.">
+    <meta name="twitter:image" content="https://jha360.com/og-image.jpg">
+    <meta name="twitter:image:alt" content="JHA360 - Professional 360 Virtual Tours">
+    <meta name="twitter:site" content="@newbharatskills">
+    <meta name="twitter:creator" content="@newbharatskills">
+    
+    <!-- Additional SEO Meta Tags - ADDED -->
+    <meta name="geo.region" content="IN-MH">
+    <meta name="geo.placename" content="Mumbai">
+    <meta name="geo.position" content="19.0760;72.8777">
+    <meta name="ICBM" content="19.0760, 72.8777">
     
     <!-- Favicon Configuration -->
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -28,35 +52,162 @@
     <!-- Preconnect for External Resources -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://www.google.com">
+    <link rel="dns-prefetch" href="https://newbharatskills.in">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" as="image" href="New-BharatSkills-logo-removebg-preview.png">
+    <link rel="preload" as="video" href="https://newbharatskills.in/hero-video.mp4">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
     
-    <!-- Schema.org Structured Data for SEO -->
+    <!-- Schema.org Structured Data for SEO - ENHANCED -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "JHA360",
-      "url": "https://jha360.com/",
-      "logo": "https://jha360.com/New-BharatSkills-logo-removebg-preview.png",
-      "description": "Provider of immersive 360 virtual tours for businesses across India",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Mumbai",
-        "addressRegion": "Maharashtra",
-        "addressCountry": "IN"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+91-8369397726",
-        "contactType": "Customer Service",
-        "email": "office@jha360.com"
-      },
-      "sameAs": [
-        "https://www.instagram.com/newbharatskills/",
-        "https://www.linkedin.com/company/new-bharat-skills/",
-        "https://www.youtube.com/@NewBharatSkills"
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://jha360.com/#organization",
+          "name": "JHA360",
+          "url": "https://jha360.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://jha360.com/New-BharatSkills-logo-removebg-preview.png",
+            "width": 200,
+            "height": 50
+          },
+          "description": "Provider of immersive 360 virtual tours for businesses across India. Official Google Street View Trusted Agency.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Mumbai",
+            "addressRegion": "Maharashtra",
+            "addressCountry": "IN"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+91-8369397726",
+            "contactType": "Customer Service",
+            "email": "office@newbharatskills.in",
+            "areaServed": "IN",
+            "availableLanguage": ["English", "Hindi"]
+          },
+          "sameAs": [
+            "https://www.instagram.com/newbharatskills/",
+            "https://www.linkedin.com/company/new-bharat-skills/",
+            "https://www.youtube.com/@NewBharatSkills"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://jha360.com/#website",
+          "url": "https://jha360.com/",
+          "name": "JHA360",
+          "description": "360 Virtual Tours Portfolio - Google Street View Trusted Agency",
+          "publisher": {
+            "@id": "https://jha360.com/#organization"
+          },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://jha360.com/?s={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          },
+          "inLanguage": "en-IN"
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://jha360.com/#webpage",
+          "url": "https://jha360.com/",
+          "name": "JHA360 | 360 Virtual Tours Portfolio | Google Street View Trusted Agency",
+          "isPartOf": {
+            "@id": "https://jha360.com/#website"
+          },
+          "about": {
+            "@id": "https://jha360.com/#organization"
+          },
+          "description": "Immersive 360 virtual tours that showcase businesses in stunning detail. Explore our portfolio of interactive virtual experiences.",
+          "inLanguage": "en-IN",
+          "potentialAction": {
+            "@type": "ReadAction",
+            "target": ["https://jha360.com/"]
+          }
+        },
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://jha360.com/#localbusiness",
+          "name": "JHA360 - NewBharatSkills",
+          "image": "https://jha360.com/New-BharatSkills-logo-removebg-preview.png",
+          "description": "Professional 360 virtual tour services for businesses. Official Google Street View Trusted Agency providing immersive experiences.",
+          "telephone": "+91-8369397726",
+          "email": "office@newbharatskills.in",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Mumbai",
+            "addressRegion": "Maharashtra",
+            "addressCountry": "IN"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 19.0760,
+            "longitude": 72.8777
+          },
+          "url": "https://jha360.com/",
+          "priceRange": "$$",
+          "areaServed": {
+            "@type": "Country",
+            "name": "India"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "360 Virtual Tour Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "360 Virtual Tours for Gyms",
+                  "description": "Immersive virtual tours showcasing gym facilities and equipment"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "360 Virtual Tours for Resorts",
+                  "description": "Virtual tours highlighting resort amenities and natural beauty"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "360 Virtual Tours for Stores",
+                  "description": "Interactive tours for retail stores and showrooms"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "360 Virtual Tours for Restaurants",
+                  "description": "Immersive dining experience previews"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Google Street View Trusted Services",
+                  "description": "Official Google Street View integration for businesses"
+                }
+              }
+            ]
+          }
+        }
       ]
     }
     </script>
@@ -1729,3 +1880,4 @@
     </script>
 </body>
 </html>
+
