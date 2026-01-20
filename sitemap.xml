@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   
   <!-- Homepage - Main URL -->
   <url>
@@ -14,21 +13,15 @@
     <image:image>
       <image:loc>https://jha360.com/New-BharatSkills-logo-removebg-preview.png</image:loc>
       <image:caption>JHA360 NewBharatSkills Logo</image:caption>
+      <image:title>JHA360 - 360 Virtual Tours</image:title>
     </image:image>
     
     <image:image>
       <image:loc>https://jha360.com/google_street_veiw_trusted_agency.png</image:loc>
       <image:caption>Google Street View Trusted Agency Badge</image:caption>
+      <image:title>Official Google Street View Trusted Agency</image:title>
     </image:image>
-    
-    <!-- Video for this page -->
-    <video:video>
-      <video:thumbnail_loc>https://newbharatskills.in/hero-video-thumbnail.jpg</video:thumbnail_loc>
-      <video:title>JHA360 Virtual Tour Showcase</video:title>
-      <video:description>Immersive 360 virtual tours that showcase businesses in stunning detail</video:description>
-      <video:content_loc>https://newbharatskills.in/hero-video.mp4</video:content_loc>
-      <video:player_loc>https://jha360.com/</video:player_loc>
-    </video:video>
+  
   </url>
   
   <!-- 
