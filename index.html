@@ -667,28 +667,237 @@
             flex-direction: row-reverse;
         }
 
-        /* Loading animation for iframes */
-        .project-iframe::before {
-            content: 'Loading 360 Tour...';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(10, 88, 202, 0.1);
+
+
+        /* ====================================================
+           VISIBILITY GROWTH SECTION
+           ==================================================== */
+        .growth-section {
+            padding: 4rem 0;
+            background: #f0f4ff;
+        }
+
+        .growth-section .section-title strong {
+            color: var(--primary);
+        }
+
+        .growth-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            margin-top: 2.5rem;
+        }
+
+        /* Stat cards */
+        .growth-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .stat-card {
+            background: var(--white);
+            border-radius: 14px;
+            padding: 1.8rem 1.2rem;
+            text-align: center;
+            box-shadow: 0 4px 16px rgba(10, 88, 202, 0.1);
+            border-top: 4px solid var(--primary);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 24px rgba(10, 88, 202, 0.18);
+        }
+
+        .stat-icon {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+        }
+
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 0.4rem;
+        }
+
+        .stat-number span {
+            font-size: 1.8rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-sub {
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+
+        /* Chart */
+        .growth-chart-container {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(10, 88, 202, 0.1);
+        }
+
+        .chart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .chart-title {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--dark);
+        }
+
+        .chart-legend {
             display: flex;
             align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            font-weight: 500;
-            z-index: 1;
+            gap: 0.6rem;
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-left: 0.8rem;
+        }
+
+        .legend-dot.before { background: #adb5bd; }
+        .legend-dot.after  { background: var(--primary); }
+
+        .chart-area {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .y-axis {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: var(--gray);
+            padding-bottom: 2px;
+            min-width: 30px;
+            text-align: right;
+        }
+
+        .chart-plot {
+            flex: 1;
+            overflow: hidden;
+        }
+
+        .chart-plot svg {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .grid-line {
+            stroke: #e9ecef;
+            stroke-width: 1;
+        }
+
+        .chart-line {
+            fill: none;
+            stroke-width: 3;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .line-before {
+            stroke: #adb5bd;
+            stroke-dasharray: 6 4;
+            stroke-width: 2;
+        }
+
+        .line-after {
+            stroke: var(--primary);
+            stroke-dasharray: 900;
+            stroke-dashoffset: 900;
+            transition: stroke-dashoffset 2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .line-after.animated {
+            stroke-dashoffset: 0;
+        }
+
+        .chart-area-fill {
+            fill: rgba(10, 88, 202, 0.08);
+            opacity: 0;
+            transition: opacity 1.5s ease 0.5s;
+        }
+
+        .chart-area-fill.animated {
             opacity: 1;
+        }
+
+        .dot {
             transition: opacity 0.3s ease;
         }
 
-        .project-iframe.loaded::before {
+        .dot-after {
+            fill: var(--primary);
+            stroke: white;
+            stroke-width: 2;
             opacity: 0;
-            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        .dot-after.animated { opacity: 1; }
+
+        .dot-before {
+            fill: #adb5bd;
+            opacity: 0.7;
+        }
+
+        .chart-label-200 {
+            font-size: 13px;
+            font-weight: 800;
+            fill: var(--primary);
+            text-anchor: end;
+            opacity: 0;
+            transition: opacity 0.5s ease 1.8s;
+        }
+
+        .chart-label-200.animated { opacity: 1; }
+
+        .x-axis-labels {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.6rem 0 0 36px;
+            font-size: 0.75rem;
+            color: var(--gray);
+        }
+
+        @media (max-width: 900px) {
+            .growth-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .growth-stats {
+                grid-template-columns: 1fr 1fr;
+            }
+            .stat-number { font-size: 2rem; }
+            .chart-header { flex-direction: column; align-items: flex-start; }
         }
 
         /* CTA Section */
@@ -709,6 +918,17 @@
             margin: 0 auto 2rem;
             font-size: 1.1rem;
             opacity: 0.9;
+        }
+
+        .cta-form-wrapper {
+            margin-top: 3rem;
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2rem;
+            max-width: 860px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
         }
 
         .btn-light {
@@ -1326,11 +1546,320 @@
                 padding: 0 0.5rem;
             }
         }
+		
+		/* ====================================================
+           TESTIMONIALS SECTION
+           ==================================================== */
+        .testimonials {
+            padding: 3rem 0;
+            background-color: var(--white);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--primary);
+            opacity: 0.2;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-text {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            display: none;
+        }
+
+        .author-info h4 {
+            margin: 0;
+            color: var(--dark);
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .author-info p {
+            margin: 0;
+            color: var(--gray);
+            font-size: 0.85rem;
+        }
+
+        .rating {
+            color: #ffc107;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        /* ====================================================
+           FAQ SECTION
+           ==================================================== */
+        .faq-section {
+            padding: 3rem 0;
+            background-color: #f8f9fa;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 2rem auto 0;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1.2rem 1.5rem;
+            background: var(--white);
+            border: none;
+            text-align: left;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            background: rgba(10, 88, 202, 0.05);
+        }
+
+        .faq-question i {
+            font-size: 1.2rem;
+            color: var(--primary);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 1000px;
+            padding: 0 1.5rem 1.5rem;
+        }
+
+        .faq-answer p {
+            color: var(--gray);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .faq-answer ul {
+            margin: 0.5rem 0 0 1.5rem;
+            color: var(--gray);
+        }
+
+        .faq-answer ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* ====================================================
+           LEAD CAPTURE FORM (Modal)
+           ==================================================== */
+        .lead-form-trigger {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 1000;
+            background: linear-gradient(135deg, var(--secondary), #ff8c00);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 24px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(229, 90, 0, 0.4);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .lead-form-trigger:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 22px rgba(229, 90, 0, 0.5);
+        }
+
+        .lead-form-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 9999;
+            backdrop-filter: blur(3px);
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .lead-form-modal.active {
+            display: flex;
+        }
+
+        .lead-form-container {
+            background: white;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 500px;
+            padding: 2rem;
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .lead-form-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--gray);
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .lead-form-close:hover {
+            background: #f0f0f0;
+            color: var(--dark);
+        }
+
+        .lead-form-container h3 {
+            margin: 0 0 0.5rem;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .lead-form-container p {
+            margin: 0 0 1.5rem;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: border-color 0.2s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 0.9rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .form-submit:hover {
+            background: #0847a5;
+        }
+
+        @media (max-width: 768px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .lead-form-trigger {
+                bottom: 20px;
+                left: 20px;
+                padding: 10px 18px;
+                font-size: 0.85rem;
+            }
+        }
+		
     </style>
 </head>
 <body>
-    <!-- Skip to Content Link for Accessibility -->
-    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
     
     <!-- Back to Top Button -->
     <a href="#top" class="back-to-top" id="backToTop" aria-label="Back to top">
@@ -1421,6 +1950,118 @@
         </div>
     </section>
 
+    <!-- Visibility Growth Section -->
+    <section class="growth-section" id="growth">
+        <div class="container">
+            <div class="section-title">
+                <h2>Real Results. Real Growth.</h2>
+                <p>Businesses that partnered with JHA360 for 360 virtual tours saw an average <strong>200% increase in Google Maps visibility</strong> within just 30 days of going live.</p>
+            </div>
+            <div class="growth-wrapper">
+                <!-- Stats -->
+                <div class="growth-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-eye"></i></div>
+                        <div class="stat-number" data-target="200">0<span>%</span></div>
+                        <div class="stat-label">Visibility Growth</div>
+                        <div class="stat-sub">Average in 30 days</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-mouse-pointer"></i></div>
+                        <div class="stat-number" data-target="3">0<span>x</span></div>
+                        <div class="stat-label">More Profile Clicks</div>
+                        <div class="stat-sub">Compared to before tour</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div class="stat-number" data-target="40">0<span>%</span></div>
+                        <div class="stat-label">More Customer Calls</div>
+                        <div class="stat-sub">Direct from Google Maps</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="stat-number" data-target="5">0<span>x</span></div>
+                        <div class="stat-label">Direction Requests</div>
+                        <div class="stat-sub">Increase after going live</div>
+                    </div>
+                </div>
+
+                <!-- Animated Chart -->
+                <div class="growth-chart-container">
+                    <div class="chart-header">
+                        <span class="chart-title">Google Maps Visibility — Month on Month</span>
+                        <div class="chart-legend">
+                            <span class="legend-dot before"></span><span>Before Tour</span>
+                            <span class="legend-dot after"></span><span>After Tour</span>
+                        </div>
+                    </div>
+                    <div class="chart-area">
+                        <div class="y-axis">
+                            <span>500</span>
+                            <span>400</span>
+                            <span>300</span>
+                            <span>200</span>
+                            <span>100</span>
+                            <span>0</span>
+                        </div>
+                        <div class="chart-plot">
+                            <svg id="growthChart" viewBox="0 0 600 260" preserveAspectRatio="xMidYMid meet">
+                                <!-- Grid lines -->
+                                <line x1="0" y1="52" x2="600" y2="52" class="grid-line"/>
+                                <line x1="0" y1="104" x2="600" y2="104" class="grid-line"/>
+                                <line x1="0" y1="156" x2="600" y2="156" class="grid-line"/>
+                                <line x1="0" y1="208" x2="600" y2="208" class="grid-line"/>
+                                <line x1="0" y1="260" x2="600" y2="260" class="grid-line"/>
+
+                                <!-- Before line (flat/slow) -->
+                                <polyline id="lineBefore"
+                                    points="0,240 120,232 240,228 360,222 480,218 600,215"
+                                    class="chart-line line-before"/>
+
+                                <!-- After line (steep growth) -->
+                                <polyline id="lineAfter"
+                                    points="0,240 120,200 240,148 360,90 480,40 600,15"
+                                    class="chart-line line-after"/>
+
+                                <!-- Area fill for after line -->
+                                <polygon id="areaAfter"
+                                    points="0,240 120,200 240,148 360,90 480,40 600,15 600,260 0,260"
+                                    class="chart-area-fill"/>
+
+                                <!-- Data dots - After -->
+                                <circle cx="0"   cy="240" r="5" class="dot dot-after"/>
+                                <circle cx="120" cy="200" r="5" class="dot dot-after"/>
+                                <circle cx="240" cy="148" r="5" class="dot dot-after"/>
+                                <circle cx="360" cy="90"  r="5" class="dot dot-after"/>
+                                <circle cx="480" cy="40"  r="5" class="dot dot-after"/>
+                                <circle cx="600" cy="15"  r="5" class="dot dot-after"/>
+
+                                <!-- Data dots - Before -->
+                                <circle cx="0"   cy="240" r="4" class="dot dot-before"/>
+                                <circle cx="120" cy="232" r="4" class="dot dot-before"/>
+                                <circle cx="240" cy="228" r="4" class="dot dot-before"/>
+                                <circle cx="360" cy="222" r="4" class="dot dot-before"/>
+                                <circle cx="480" cy="218" r="4" class="dot dot-before"/>
+                                <circle cx="600" cy="215" r="4" class="dot dot-before"/>
+
+                                <!-- 200% label -->
+                                <text x="580" y="10" class="chart-label-200">+200%</text>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="x-axis-labels">
+                        <span>Week 1</span>
+                        <span>Week 2</span>
+                        <span>Week 3</span>
+                        <span>Week 4</span>
+                        <span>Month 2</span>
+                        <span>Month 3</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Portfolio Section -->
     <section class="portfolio" id="portfolio">
         <div class="container">
@@ -1433,7 +2074,7 @@
                 <div class="project-content">
                     <h3>GARG SKY Ajivali</h3>
                     <span class="project-category">Real Estate</span>
-                    <p>Explore GARG SKY Ajivali in a 360° virtual tour and experience premium 2BHK living, world-class amenities on an entire floor, landscaped skyline views, and quick connectivity to the expressway and Navi Mumbai Airport.</p>
+                   <p>Professional 360 virtual tour for GARG SKY Ajivali residential project in Panvel, Maharashtra. Our Google Street View Trusted photography showcases premium 2BHK apartments, rooftop amenities, and Mumbai-Pune Expressway connectivity. Ideal for real estate developers in Navi Mumbai looking to attract homebuyers with immersive property walkthroughs.</p>
                     <div class="project-location">
                         <i class="fas fa-map-marker-alt"></i>
                         <span>OLD MUMBAI PUNE HIGHWAY, AJIVALI</span>
@@ -1450,7 +2091,7 @@
                 <div class="project-content">
                     <h3>ZenXFit (Vashi)</h3>
                     <span class="project-category">GYM Segment</span>
-                    <p>Experience the state-of-the-art fitness facilities at ZenXFit through our immersive 360 virtual tour. Explore the cutting-edge equipment, spacious workout areas, and premium amenities that make this gym stand out.</p>
+                    <p>360 virtual tour for ZenXFit gym in Vashi, Navi Mumbai — a complete Google Maps virtual walkthrough showcasing cardio zones, strength training equipment, group fitness studios, and member amenities. Perfect example of how gyms and fitness centers in Mumbai can increase member inquiries with professional virtual tours by a Google Street View Trusted Agency.</p>
                     <div class="project-location">
                         <i class="fas fa-map-marker-alt"></i>
                         <span>Vashi, Navi Mumbai</span>
@@ -1467,7 +2108,7 @@
                 <div class="project-content">
                     <h3>K Rocks Resort Lakeside Camping (Pune)</h3>
                     <span class="project-category">Resort Segment</span>
-                    <p>Immerse yourself in the natural beauty and luxury of K Rocks Resort. Our 360 virtual tour showcases the stunning lakeside views, comfortable camping setups, and recreational facilities that make this resort a perfect getaway.</p>
+                    <p>Immersive 360 virtual tour for K Rocks Resort lakeside camping in Pune, Maharashtra. Our professional photography captures scenic views, glamping tents, water sports facilities, and outdoor dining areas. Helps resorts and hotels in Pune attract weekend travelers and corporate groups with Google Maps virtual tours that showcase property ambiance before booking.</p>
                     <div class="project-location">
                         <i class="fas fa-map-marker-alt"></i>
                         <span>Pune, Maharashtra</span>
@@ -1484,7 +2125,7 @@
                 <div class="project-content">
                     <h3>Bikaner House</h3>
                     <span class="project-category">Store Segment</span>
-                    <p>Explore Bikaner House | Rajasthani Couture in an immersive experience and discover artisan-made silhouettes, rich heritage detailing, and joyful looks designed for every celebration.</p>
+                    <p>360 virtual tour for Bikaner House ethnic wear showroom in Vashi, Navi Mumbai. Our Google Street View photography showcases Rajasthani couture collections, bridal wear sections, and in-store shopping experience. Retail stores in Mumbai's fashion districts use our virtual tours to drive foot traffic and online engagement through Google Maps integration.</p>
                     <div class="project-location">
                         <i class="fas fa-map-marker-alt"></i>
                         <span>Vashi, Maharashtra</span>
@@ -1501,7 +2142,7 @@
                 <div class="project-content">
                     <h3>Peshwai Silk Sarees Pvt. Ltd. (Vashi)</h3>
                     <span class="project-category">Store Segment</span>
-                    <p>Step into the world of exquisite traditional wear with our 360 virtual tour of Peshwai Silk Sarees. Explore their extensive collection of silk sarees, designer wear, and accessories in stunning detail from the comfort of your home.</p>
+                    <p>Professional 360 virtual tour for Peshwai Silk Sarees showroom in Vashi, Navi Mumbai. Our Google Street View Trusted photography displays silk saree collections, designer wear sections, and jewelry displays. Textile showrooms and ethnic wear stores in Mumbai use our virtual tours to reach NRI customers and outstation shoppers looking for authentic Indian wear online.</p>
                     <div class="project-location">
                         <i class="fas fa-map-marker-alt"></i>
                         <span>Vashi, Navi Mumbai</span>
@@ -1518,7 +2159,7 @@
                 <div class="project-content">
                     <h3>Upper Deck Sky Lounge</h3>
                     <span class="project-category">Restaurant Segment</span>
-                    <p>Experience fine dining with a view at Upper Deck Sky Lounge. Our 360 virtual tour captures the elegant ambiance, stunning city views, and sophisticated interiors that make this restaurant a premier dining destination.</p>
+                    <p>360 virtual tour for Upper Deck Sky Lounge rooftop restaurant in Mumbai, Maharashtra. Our professional Google Maps photography showcases dining areas, bar sections, city skyline views, and premium ambiance. Restaurants and fine dining establishments in Mumbai use our virtual tours to increase table reservations and event bookings through immersive Google Street View experiences.</p>
                     <div class="project-location">
                         <i class="fas fa-map-marker-alt"></i>
                         <span>Mumbai, Maharashtra</span>
@@ -1527,6 +2168,273 @@
                 <div class="project-iframe" id="tour-4">
                     <!-- Embedded 360 Tour -->
                     <iframe src="https://www.google.com/maps/embed?pb=!4v1762765120661!6m8!1m7!1sCAoSHENJQUJJaEJVSnJ4Y2x2Z3VKX2dERFAxSEZYak8.!2m2!1d19.02460241876932!2d73.02216262154366!3f340!4f0!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" title="360 Virtual Tour of Upper Deck Sky Lounge" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+	
+	<!-- ============================================================
+         TESTIMONIALS SECTION
+         ============================================================ -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Clients Say</h2>
+                <p>Trusted by businesses across Mumbai, Navi Mumbai, and Pune for professional 360 virtual tours</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"JHA360's virtual tour helped us showcase our property to NRI buyers who couldn't visit in person. We closed 3 sales directly from leads who first explored the property online through their Google Maps tour."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">RG</div>
+                        <div class="author-info">
+                            <h4>Rajesh Gupta</h4>
+                            <p>Real Estate Developer, Panvel</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"After adding the 360 tour to our Google Business Profile, we saw a 40% increase in membership inquiries. People love being able to see the gym equipment and facilities before visiting."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SP</div>
+                        <div class="author-info">
+                            <h4>Sanjay Patil</h4>
+                            <p>Owner, ZenXFit Gym Vashi</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"The 360 tour showcased our lakeside location beautifully. Weekend bookings increased significantly, especially from couples searching for getaway resorts near Pune. Best investment for our marketing."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MK</div>
+                        <div class="author-info">
+                            <h4>Meera Kulkarni</h4>
+                            <p>Manager, K Rocks Resort Pune</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"JHA360 is professional and understands retail. The virtual tour helped us reach customers outside Mumbai who now shop with confidence knowing exactly what our store looks like."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AT</div>
+                        <div class="author-info">
+                            <h4>Anita Thakur</h4>
+                            <p>Owner, Peshwai Silk Sarees Vashi</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 5 -->
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Our Google Maps visibility improved dramatically after adding the 360 tour. Event bookings for corporate parties and celebrations have doubled. The ROI was immediate."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">VD</div>
+                        <div class="author-info">
+                            <h4>Vikram Desai</h4>
+                            <p>GM, Upper Deck Sky Lounge Mumbai</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 6 -->
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Being a Google Street View Trusted Agency, JHA360 delivered quality that actually improved our Google search ranking. Their process was smooth and the final tour exceeded our expectations."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">NS</div>
+                        <div class="author-info">
+                            <h4>Neha Shah</h4>
+                            <p>Marketing Head, Bikaner House Vashi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+	
+	
+	<!-- ============================================================
+         FAQ SECTION
+         ============================================================ -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know about 360 virtual tours for your business</p>
+            </div>
+
+            <div class="faq-container">
+                <!-- FAQ 1 -->
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        How much does a 360 virtual tour cost in Mumbai?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Our 360 virtual tour pricing depends on property size and complexity. A basic single-space tour starts at ₹4,999. Full business tours for gyms, restaurants, or retail stores range from ₹15,000 to ₹45,000. Real estate projects are quoted based on total area. All packages include Google Maps integration and Google Street View publishing by our certified team.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        What industries benefit most from 360 virtual tours?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We serve clients across multiple sectors:</p>
+                        <ul>
+                            <li><strong>Real Estate:</strong> Residential projects, commercial properties, showrooms</li>
+                            <li><strong>Hospitality:</strong> Hotels, resorts, restaurants, banquet halls</li>
+                            <li><strong>Fitness:</strong> Gyms, yoga studios, sports facilities</li>
+                            <li><strong>Retail:</strong> Showrooms, boutiques, shopping complexes</li>
+                            <li><strong>Education:</strong> Schools, colleges, coaching institutes</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        How long does it take to create a virtual tour?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>The complete process takes 5-7 working days from shooting to final delivery:</p>
+                        <ul>
+                            <li><strong>Day 1:</strong> Site survey and photography (2-4 hours on-site)</li>
+                            <li><strong>Days 2-4:</strong> Post-production, stitching, and editing</li>
+                            <li><strong>Days 5-6:</strong> Google Maps integration and Street View publishing</li>
+                            <li><strong>Day 7:</strong> Final delivery and training on how to share the tour</li>
+                        </ul>
+                        <p>Rush delivery is available for urgent projects in Mumbai and Navi Mumbai.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        What makes JHA360 different from other virtual tour providers?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We are an <strong>official Google Street View Trusted Agency</strong> — one of the few certified providers in Maharashtra. This means:</p>
+                        <ul>
+                            <li>Direct publishing rights to Google Maps and Google Search</li>
+                            <li>Higher quality standards verified by Google</li>
+                            <li>Better SEO performance and local search visibility</li>
+                            <li>360 tours that appear natively in Google Business Profile</li>
+                            <li>Technical support and updates directly from Google</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Do you serve areas outside Mumbai?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! Our primary service areas include:</p>
+                        <ul>
+                            <li>Mumbai (entire city including suburbs)</li>
+                            <li>Navi Mumbai (Vashi, Kharghar, Panvel, Airoli, etc.)</li>
+                            <li>Thane and Kalyan-Dombivli</li>
+                            <li>Pune city and surrounding areas</li>
+                        </ul>
+                        <p>We also accept projects in other Maharashtra cities on request. Contact us for availability and travel charges.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 6 -->
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Can I update or change the virtual tour later?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! We offer virtual tour update services if your business undergoes renovation, layout changes, or seasonal decoration updates. Update shoots are charged at a reduced rate since we already have your property's baseline data. Most retail clients update their tours annually or before major festivals/seasons.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 7 -->
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        Will the tour work on mobile phones?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely! All our 360 virtual tours are mobile-responsive and work seamlessly on smartphones, tablets, and desktop computers. In fact, over 70% of Google Maps users discover businesses on mobile, so mobile optimization is a key part of our service. Users can navigate your tour using touch gestures or by tilting their phone.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 8 -->
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        How do I get started?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Getting started is simple:</p>
+                        <ul>
+                            <li><strong>Step 1:</strong> Contact us via phone (+91-8369397726) or the form below</li>
+                            <li><strong>Step 2:</strong> We'll schedule a free consultation to understand your needs</li>
+                            <li><strong>Step 3:</strong> Receive a detailed quote and timeline</li>
+                            <li><strong>Step 4:</strong> Book your photography session</li>
+                            <li><strong>Step 5:</strong> Relax while we create and publish your tour!</li>
+                        </ul>
+                        <p>Most clients see their tour live on Google Maps within 7 days of first contact.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1570,6 +2478,10 @@
             <h2>Ready to Showcase Your Business in 360?</h2>
             <p>Get your own professional virtual tour and join our satisfied clients. Increase engagement, build trust, and stand out from competitors with an immersive 360 experience.</p>
             <a href="https://newbharatskills.in/contact.php" class="btn btn-light">Get Your Virtual Tour</a>
+            <div class="cta-form-wrapper">
+                <iframe data-tally-src="https://tally.so/embed/dWYY4N?dynamicHeight=1" loading="lazy" width="100%" height="845" frameborder="0" marginheight="0" marginwidth="0" title="Get Your Free Quote"></iframe>
+                <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+            </div>
         </div>
     </section>
    </main>
@@ -1604,7 +2516,7 @@
                     <ul>
                         <li><i class="fas fa-map-marker-alt"></i> Mumbai, Maharashtra</li>
                         <li><i class="fas fa-phone"></i> +91 8369397726</li>
-                        <li><i class="fas fa-envelope"></i> office@newbharatskills.in</li>
+                        <li><i class="fas fa-envelope"></i>office@newbharatskills.in</li>
                     </ul>
                 </div>
             </div>
@@ -1642,7 +2554,7 @@
     </div>
     END OF COMMENTED POPUP HTML -->
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Mobile Menu Toggle
         document.querySelector('.mobile-menu').addEventListener('click', function() {
             const nav = document.querySelector('nav');
@@ -1714,6 +2626,61 @@
         document.addEventListener('mousedown', function() {
             document.body.classList.remove('keyboard-user');
         });
+
+        // FAQ toggle function
+        function toggleFAQ(button) {
+            const item = button.parentElement;
+            const isActive = item.classList.contains('active');
+            document.querySelectorAll('.faq-item.active').forEach(function(openItem) {
+                openItem.classList.remove('active');
+            });
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        }
+
+        // Growth section: chart + counter animation on scroll
+        (function() {
+            let animated = false;
+
+            function animateCounters() {
+                document.querySelectorAll('.stat-number').forEach(function(el) {
+                    const target = parseInt(el.getAttribute('data-target'));
+                    const suffix = el.querySelector('span') ? el.querySelector('span').outerHTML : '';
+                    let current = 0;
+                    const step = Math.ceil(target / 60);
+                    const timer = setInterval(function() {
+                        current += step;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        el.innerHTML = current + suffix;
+                    }, 20);
+                });
+            }
+
+            function animateChart() {
+                document.querySelector('.line-after').classList.add('animated');
+                document.querySelector('.chart-area-fill').classList.add('animated');
+                document.querySelector('.chart-label-200').classList.add('animated');
+                document.querySelectorAll('.dot-after').forEach(function(dot, i) {
+                    setTimeout(function() { dot.classList.add('animated'); }, 400 + i * 200);
+                });
+            }
+
+            const growthSection = document.querySelector('.growth-section');
+            if (growthSection) {
+                const growthObserver = new IntersectionObserver(function(entries) {
+                    if (entries[0].isIntersecting && !animated) {
+                        animated = true;
+                        animateCounters();
+                        animateChart();
+                    }
+                }, { threshold: 0.2 });
+                growthObserver.observe(growthSection);
+            }
+        })();
 
         // Lazy loading for iframes (native lazy loading already in use)
         if ('loading' in HTMLIFrameElement.prototype) {
@@ -1869,21 +2836,32 @@
         // Initialize Christmas popup when DOM is ready
         document.addEventListener('DOMContentLoaded', () => {
             window.christmasPopup = new ChristmasPopup(CHRISTMAS_POPUP_CONFIG);
-        });
+        });*/
 
-        // Keyboard accessibility - close on Escape key
+// Keyboard accessibility - close on Escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && window.christmasPopup) {
                 window.christmasPopup.close();
             }
         });
-        END OF COMMENTED POPUP JAVASCRIPT */
     </script>
-</body>
-</html>
 
-
-
-
-
-
+    <!-- ============================================================
+         TALLY.SO WIDGET SCRIPT
+         This connects the "Get Free Quote" button to your Tally form
+         Form ID: 2ENqZe
+         ============================================================ -->
+    <script>
+		window.TallyConfig = {
+		  "formId": "2ENqZe",
+		  "popup": {
+			"layout": "modal",
+			"width": 600,
+			"open": [
+			  {
+				"trigger": "click",
+				"selector": "lead-form-trigger"
+			  },
+			  {
+				"trigger": "scroll",
+				"scrollPercent": 70  // Opens
