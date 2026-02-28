@@ -1553,13 +1553,32 @@
         .testimonials {
             padding: 3rem 0;
             background-color: var(--white);
+            overflow: hidden;
         }
 
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+        .testimonials-scroll-wrapper {
             margin-top: 2rem;
+            overflow: hidden;
+            position: relative;
+            /* Fade edges */
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+            mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+        }
+
+        .testimonials-track {
+            display: flex;
+            gap: 1.5rem;
+            width: max-content;
+            animation: scrollTestimonials 35s linear infinite;
+        }
+
+        .testimonials-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scrollTestimonials {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
 
         .testimonial-card {
@@ -1568,11 +1587,12 @@
             border-radius: 10px;
             box-shadow: var(--shadow);
             position: relative;
-            transition: var(--transition);
+            width: 340px;
+            flex-shrink: 0;
+            transition: box-shadow 0.3s ease;
         }
 
         .testimonial-card:hover {
-            transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
 
@@ -1844,10 +1864,6 @@
         }
 
         @media (max-width: 768px) {
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-            
             .lead-form-trigger {
                 bottom: 20px;
                 left: 20px;
@@ -2138,7 +2154,7 @@
             </div>
 
             <!-- Project 3 -->
-            <div class="project">
+            <!-- <div class="project">
                 <div class="project-content">
                     <h3>Peshwai Silk Sarees Pvt. Ltd. (Vashi)</h3>
                     <span class="project-category">Store Segment</span>
@@ -2149,10 +2165,27 @@
                     </div>
                 </div>
                 <div class="project-iframe" id="tour-3">
-                    <!-- Embedded 360 Tour -->
+                  
                     <iframe src="https://www.google.com/maps/embed?pb=!4v1762763085849!6m8!1m7!1sCAoSHENJQUJJaERwckM0N1RteENQcGdPWTFUOHZtWUQ.!2m2!1d19.07145255830345!2d73.0012560715027!3f186.38!4f9.150000000000006!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" title="360 Virtual Tour of Peshwai Silk Sarees" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
-            </div>
+            </div> -->
+			
+			<!-- Tithee Banquets -->
+			<div class="project">
+				<div class="project-content">
+					<h3>Tithee Banquets</h3>
+					<span class="project-category">Banquet Hall Segment</span>
+					<p>360 virtual tour for Tithee Banquets in Navi Mumbai — a complete Google Maps virtual walkthrough showcasing elegant banquet halls, event spaces, and décor setups. Ideal for couples, families, and corporates planning events in Navi Mumbai. Our Google Street View Trusted photography helps banquet venues attract more bookings by letting clients virtually explore the space before visiting.</p>
+					<div class="project-location">
+						<i class="fas fa-map-marker-alt"></i>
+						<span>Navi Mumbai, Maharashtra</span>
+					</div>
+				</div>
+				<div class="project-iframe">
+					<iframe src="https://www.google.com/maps/embed?pb=!4v1772248336646!6m8!1m7!1sCAoSHENJQUJJaENZQldhU2xxdEo1RFhNU1lZOWtzQVI.!2m2!1d19.03620810715993!2d73.08938906197329!3f307.59424486406687!4f1.340954484987094!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="360 Virtual Tour of Tithee Banquets, Navi Mumbai"></iframe>
+				</div>
+			</div>
+			
 
             <!-- Project 4 -->
             <div class="project">
@@ -2183,119 +2216,131 @@
                 <p>Trusted by businesses across Mumbai, Navi Mumbai, and Pune for professional 360 virtual tours</p>
             </div>
 
-            <div class="testimonials-grid">
-                <!-- Testimonial 1 -->
-                <div class="testimonial-card">
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">"JHA360's virtual tour helped us showcase our property to NRI buyers who couldn't visit in person. We closed 3 sales directly from leads who first explored the property online through their Google Maps tour."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">RG</div>
-                        <div class="author-info">
-                            <h4>Rajesh Gupta</h4>
-                            <p>Real Estate Developer, Panvel</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="testimonials-scroll-wrapper">
+                <div class="testimonials-track">
 
-                <!-- Testimonial 2 -->
-                <div class="testimonial-card">
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">"After adding the 360 tour to our Google Business Profile, we saw a 40% increase in membership inquiries. People love being able to see the gym equipment and facilities before visiting."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">SP</div>
-                        <div class="author-info">
-                            <h4>Sanjay Patil</h4>
-                            <p>Owner, ZenXFit Gym Vashi</p>
+                    <!-- === SET 1 === -->
+                    <div class="testimonial-card">
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="testimonial-text">"JHA360's virtual tour helped us showcase our property to NRI buyers who couldn't visit in person. We closed 3 sales directly from leads who first explored the property online through their Google Maps tour."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">RG</div>
+                            <div class="author-info">
+                                <h4>Rajesh Gupta</h4>
+                                <p>Real Estate Developer, Panvel</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Testimonial 3 -->
-                <div class="testimonial-card">
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">"The 360 tour showcased our lakeside location beautifully. Weekend bookings increased significantly, especially from couples searching for getaway resorts near Pune. Best investment for our marketing."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">MK</div>
-                        <div class="author-info">
-                            <h4>Meera Kulkarni</h4>
-                            <p>Manager, K Rocks Resort Pune</p>
+                    <div class="testimonial-card">
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="testimonial-text">"After adding the 360 tour to our Google Business Profile, we saw a 40% increase in membership inquiries. People love being able to see the gym equipment and facilities before visiting."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">SP</div>
+                            <div class="author-info">
+                                <h4>Pranav</h4>
+                                <p>Owner, ZenXFit Gym Vashi</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Testimonial 4 -->
-                <div class="testimonial-card">
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">"JHA360 is professional and understands retail. The virtual tour helped us reach customers outside Mumbai who now shop with confidence knowing exactly what our store looks like."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">AT</div>
-                        <div class="author-info">
-                            <h4>Anita Thakur</h4>
-                            <p>Owner, Peshwai Silk Sarees Vashi</p>
+                    <div class="testimonial-card">
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="testimonial-text">"The 360 tour showcased our lakeside location beautifully. Weekend bookings increased significantly, especially from couples searching for getaway resorts near Pune. Best investment for our marketing."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">MK</div>
+                            <div class="author-info">
+                                <h4>Anil Chikhale</h4>
+                                <p>Owner, K Rocks Resort Pune</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Testimonial 5 -->
-                <div class="testimonial-card">
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">"Our Google Maps visibility improved dramatically after adding the 360 tour. Event bookings for corporate parties and celebrations have doubled. The ROI was immediate."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">VD</div>
-                        <div class="author-info">
-                            <h4>Vikram Desai</h4>
-                            <p>GM, Upper Deck Sky Lounge Mumbai</p>
+                    <div class="testimonial-card">
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="testimonial-text">"Our Google Maps visibility improved dramatically after adding the 360 tour. Event bookings for corporate parties and celebrations have doubled. The ROI was immediate."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">VD</div>
+                            <div class="author-info">
+                                <h4>Tushar Ray</h4>
+                                <p>Owner, Upper Deck Sky Lounge Mumbai</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Testimonial 6 -->
-                <div class="testimonial-card">
-                    <div class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">"Being a Google Street View Trusted Agency, JHA360 delivered quality that actually improved our Google search ranking. Their process was smooth and the final tour exceeded our expectations."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">NS</div>
-                        <div class="author-info">
-                            <h4>Neha Shah</h4>
-                            <p>Marketing Head, Bikaner House Vashi</p>
+                    <div class="testimonial-card">
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="testimonial-text">"Being a Google Street View Trusted Agency, JHA360 delivered quality that actually improved our Google search ranking. Their process was smooth and the final tour exceeded our expectations."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">NS</div>
+                            <div class="author-info">
+                                <h4>Veena</h4>
+                                <p>Owner, Bikaner House Vashi</p>
+                            </div>
                         </div>
                     </div>
+
+                    <!-- === SET 2 (duplicate for seamless loop) === -->
+                    <div class="testimonial-card">
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="testimonial-text">"JHA360's virtual tour helped us showcase our property to NRI buyers who couldn't visit in person. We closed 3 sales directly from leads who first explored the property online through their Google Maps tour."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">RG</div>
+                            <div class="author-info">
+                                <h4>Rajesh Gupta</h4>
+                                <p>Real Estate Developer, Panvel</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="testimonial-text">"After adding the 360 tour to our Google Business Profile, we saw a 40% increase in membership inquiries. People love being able to see the gym equipment and facilities before visiting."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">SP</div>
+                            <div class="author-info">
+                                <h4>Pranav</h4>
+                                <p>Owner, ZenXFit Gym Vashi</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="testimonial-text">"The 360 tour showcased our lakeside location beautifully. Weekend bookings increased significantly, especially from couples searching for getaway resorts near Pune. Best investment for our marketing."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">MK</div>
+                            <div class="author-info">
+                                <h4>Anil Chikhale</h4>
+                                <p>Owner, K Rocks Resort Pune</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="testimonial-text">"Our Google Maps visibility improved dramatically after adding the 360 tour. Event bookings for corporate parties and celebrations have doubled. The ROI was immediate."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">VD</div>
+                            <div class="author-info">
+                                <h4>Tushar Ray</h4>
+                                <p>Owner, Upper Deck Sky Lounge Mumbai</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="testimonial-text">"Being a Google Street View Trusted Agency, JHA360 delivered quality that actually improved our Google search ranking. Their process was smooth and the final tour exceeded our expectations."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">NS</div>
+                            <div class="author-info">
+                                <h4>Veena</h4>
+                                <p>Owner, Bikaner House Vashi</p>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -2516,7 +2561,7 @@
                     <ul>
                         <li><i class="fas fa-map-marker-alt"></i> Mumbai, Maharashtra</li>
                         <li><i class="fas fa-phone"></i> +91 8369397726</li>
-                        <li><i class="fas fa-envelope"></i>office@newbharatskills.in</li>
+                        <li><i class="fas fa-envelope"></i> office@newbharatskills.in</li>
                     </ul>
                 </div>
             </div>
@@ -2554,7 +2599,7 @@
     </div>
     END OF COMMENTED POPUP HTML -->
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Mobile Menu Toggle
         document.querySelector('.mobile-menu').addEventListener('click', function() {
             const nav = document.querySelector('nav');
@@ -2853,15 +2898,4 @@
          ============================================================ -->
     <script>
 		window.TallyConfig = {
-		  "formId": "2ENqZe",
-		  "popup": {
-			"layout": "modal",
-			"width": 600,
-			"open": [
-			  {
-				"trigger": "click",
-				"selector": "lead-form-trigger"
-			  },
-			  {
-				"trigger": "scroll",
-				"scrollPercent": 70  // Opens
+		  "f
