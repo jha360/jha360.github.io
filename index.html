@@ -1366,6 +1366,495 @@
         }
         END OF COMMENTED POPUP STYLES */
 
+        /* ── OFFER SECTION BANNER ── */
+        .offer-section-banner {
+            padding: 40px 0;
+            background: transparent;
+        }
+        .offer-section-banner .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .osb-card {
+            position: relative;
+            background: #0B1628;
+            border-radius: 18px;
+            border: 1px solid rgba(10,88,202,0.25);
+            overflow: hidden;
+            display: flex;
+            align-items: stretch;
+            min-height: 195px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.35), 0 0 0 1px rgba(10,88,202,0.08);
+        }
+        .osb-card::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, #0a58ca, #ff6b00);
+        }
+        .osb-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(10,88,202,0.07) 1px, transparent 1px);
+            background-size: 28px 28px;
+            pointer-events: none;
+        }
+        .osb-logo-panel {
+            flex: 0 0 190px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(ellipse at 55% 50%, rgba(10,88,202,0.1) 0%, transparent 68%);
+            position: relative;
+            z-index: 1;
+        }
+        .osb-logo-wrap {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .osb-logo-wrap::before {
+            content: '';
+            position: absolute;
+            inset: -18px;
+            border-radius: 50%;
+            border: 1px solid rgba(10,88,202,0.22);
+            animation: osb-ring 3s ease-in-out infinite;
+        }
+        .osb-logo-wrap::after {
+            content: '';
+            position: absolute;
+            inset: -34px;
+            border-radius: 50%;
+            border: 1px solid rgba(255,107,0,0.1);
+            animation: osb-ring 3s ease-in-out infinite .5s;
+        }
+        @keyframes osb-ring {
+            0%,100%{opacity:.3;transform:scale(1)}
+            50%{opacity:1;transform:scale(1.05)}
+        }
+        .osb-logo {
+            width: 105px;
+            height: 105px;
+            object-fit: contain;
+            filter: drop-shadow(0 0 14px rgba(10,88,202,0.5)) drop-shadow(0 0 6px rgba(255,107,0,0.3));
+            animation: osb-breathe 4s ease-in-out infinite;
+        }
+        @keyframes osb-breathe {
+            0%,100%{filter:drop-shadow(0 0 12px rgba(10,88,202,0.4)) drop-shadow(0 0 5px rgba(255,107,0,0.25))}
+            50%{filter:drop-shadow(0 0 22px rgba(10,88,202,0.65)) drop-shadow(0 0 12px rgba(255,107,0,0.45))}
+        }
+        .osb-divider {
+            width: 1px;
+            background: rgba(255,255,255,0.06);
+            align-self: stretch;
+            margin: 24px 0;
+        }
+        .osb-content {
+            flex: 1;
+            padding: 26px 26px 26px 22px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 13px;
+            position: relative;
+            z-index: 1;
+        }
+        .osb-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .osb-tag {
+            display: inline-block;
+            font-size: 9px;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+            font-weight: 700;
+            border-radius: 30px;
+            padding: 3px 11px;
+        }
+        .osb-tag-blue {
+            color: #7ec4ff;
+            background: rgba(10,88,202,0.15);
+            border: 1px solid rgba(10,88,202,0.35);
+        }
+        .osb-tag-orange {
+            color: #ffb066;
+            background: rgba(255,107,0,0.12);
+            border: 1px solid rgba(255,107,0,0.32);
+        }
+        .osb-heading {
+            font-size: 24px;
+            font-weight: 800;
+            line-height: 1.15;
+            color: #ffffff;
+        }
+        .osb-heading .osb-hl-o { color: #ffb066; }
+        .osb-heading .osb-hl-c { color: #7ec4ff; }
+        .osb-sub {
+            font-size: 13px;
+            color: #7a95b0;
+            line-height: 1.55;
+        }
+        .osb-spots-row {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .osb-spots-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 11px;
+            color: #7a95b0;
+        }
+        .osb-spots-labels strong { color: #ffb066; font-weight: 700; }
+        .osb-progress-track {
+            height: 5px;
+            background: rgba(255,255,255,0.07);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .osb-progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #ff6b00, #ffb066);
+            border-radius: 10px;
+            transition: width 1.4s cubic-bezier(.23,1,.32,1);
+        }
+        .osb-cta-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+        .osb-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #ff6b00, #cc5500);
+            color: #fff;
+            font-family: inherit;
+            font-weight: 700;
+            font-size: 13px;
+            padding: 11px 22px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.18s, box-shadow 0.18s;
+            white-space: nowrap;
+        }
+        .osb-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(255,107,0,0.4);
+            color: #fff;
+            text-decoration: none;
+        }
+        .osb-terms {
+            font-size: 10px;
+            color: #7a95b0;
+        }
+        .osb-big {
+            flex: 0 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 26px 30px 26px 4px;
+            position: relative;
+            z-index: 1;
+        }
+        .osb-big-num {
+            font-size: 68px;
+            font-weight: 900;
+            line-height: 1;
+            letter-spacing: -4px;
+            color: #ff6b00;
+        }
+        .osb-big-word {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #ffb066;
+            margin-top: 2px;
+        }
+        @media (max-width: 768px) {
+            .osb-big { display: none; }
+            .osb-logo-panel { flex: 0 0 120px; }
+            .osb-divider { display: none; }
+            .osb-heading { font-size: 18px; }
+            .osb-logo { width: 80px; height: 80px; }
+        }
+        @media (max-width: 480px) {
+            .osb-logo-panel { display: none; }
+            .osb-content { padding: 20px 18px; }
+            .osb-heading { font-size: 17px; }
+        }
+
+        /* ── OFFER POPUP ── */
+        .offer-popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.65);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(3px);
+            animation: op-fade 0.35s ease;
+        }
+        .offer-popup-overlay.op-active {
+            display: flex;
+        }
+        @keyframes op-fade {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+        .op-card {
+            position: relative;
+            width: 90vw;
+            max-width: 720px;
+            background: #0B1628;
+            border-radius: 18px;
+            border: 1px solid rgba(10,88,202,0.28);
+            overflow: hidden;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(10,88,202,0.07);
+            animation: op-scale 0.4s cubic-bezier(0.34,1.56,0.64,1);
+        }
+        @keyframes op-scale {
+            from { opacity: 0; transform: scale(0.88) translateY(-16px); }
+            to   { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        .op-header {
+            background: linear-gradient(135deg, #060e1c, #0c1e38);
+            padding: 16px 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(10,88,202,0.15);
+            position: relative;
+        }
+        .op-header::after {
+            content: '';
+            position: absolute;
+            bottom: -1px; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #0a58ca, #ff6b00, #0a58ca, transparent);
+            opacity: 0.5;
+        }
+        .op-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .op-brand-logo {
+            width: 42px;
+            height: 42px;
+            object-fit: contain;
+            filter: drop-shadow(0 0 6px rgba(10,88,202,0.5));
+        }
+        .op-brand-name {
+            font-weight: 800;
+            font-size: 17px;
+            letter-spacing: -0.4px;
+            color: #fff;
+        }
+        .op-brand-name span { color: #7ec4ff; }
+        .op-brand-tagline {
+            font-size: 10px;
+            color: #7a95b0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .op-close {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.12);
+            color: #7a95b0;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            line-height: 1;
+            transition: background 0.15s, color 0.15s;
+            flex-shrink: 0;
+        }
+        .op-close:hover { background: rgba(255,255,255,0.14); color: #fff; }
+        .op-body {
+            padding: 24px 24px 20px;
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+        .op-logo-col {
+            flex: 0 0 120px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+        }
+        .op-logo-wrap {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .op-logo-wrap::before {
+            content: '';
+            position: absolute;
+            inset: -14px;
+            border-radius: 50%;
+            border: 1px solid rgba(10,88,202,0.22);
+            animation: osb-ring 3s ease-in-out infinite;
+        }
+        .op-logo-img {
+            width: 95px;
+            height: 95px;
+            object-fit: contain;
+            animation: osb-breathe 4s ease-in-out infinite;
+            filter: drop-shadow(0 0 12px rgba(10,88,202,0.45)) drop-shadow(0 0 6px rgba(255,107,0,0.3));
+        }
+        .op-disc-pill {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(255,107,0,0.1);
+            border: 1px solid rgba(255,107,0,0.3);
+            border-radius: 14px;
+            padding: 9px 16px;
+        }
+        .op-disc-num {
+            font-size: 30px;
+            font-weight: 900;
+            line-height: 1;
+            color: #ff6b00;
+            letter-spacing: -2px;
+        }
+        .op-disc-word {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #ffb066;
+        }
+        .op-text {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 13px;
+        }
+        .op-heading {
+            font-size: 21px;
+            font-weight: 800;
+            line-height: 1.2;
+            color: #fff;
+        }
+        .op-heading .op-hl-o { color: #ffb066; }
+        .op-heading .op-hl-c { color: #7ec4ff; }
+        .op-desc {
+            font-size: 13px;
+            color: #7a95b0;
+            line-height: 1.6;
+        }
+        .op-spots-row { display: flex; flex-direction: column; gap: 6px; }
+        .op-spots-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 11px;
+            color: #7a95b0;
+        }
+        .op-spots-labels strong { color: #ffb066; }
+        .op-left { color: #ffb066; }
+        .op-progress-track {
+            height: 5px;
+            background: rgba(255,255,255,0.07);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .op-progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #ff6b00, #ffb066);
+            border-radius: 10px;
+            transition: width 1.4s cubic-bezier(.23,1,.32,1);
+        }
+        .op-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #ff6b00, #cc5500);
+            color: #fff;
+            font-family: inherit;
+            font-weight: 700;
+            font-size: 13px;
+            padding: 11px 22px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.18s, box-shadow 0.18s;
+            white-space: nowrap;
+        }
+        .op-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(255,107,0,0.4);
+            color: #fff;
+            text-decoration: none;
+        }
+        .op-footer {
+            background: rgba(0,0,0,0.2);
+            padding: 11px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        .op-live-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 11px;
+            color: #7a95b0;
+        }
+        .op-dot {
+            width: 7px; height: 7px;
+            border-radius: 50%;
+            background: #ff6b00;
+            animation: op-blink 1.4s ease-in-out infinite;
+            flex-shrink: 0;
+        }
+        @keyframes op-blink {
+            0%,100%{opacity:1} 50%{opacity:.2}
+        }
+        .op-skip {
+            font-size: 11px;
+            color: #7a95b0;
+            text-decoration: underline;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-family: inherit;
+            transition: color 0.15s;
+        }
+        .op-skip:hover { color: #fff; }
+        body.offer-popup-open { overflow: hidden; }
+        @media (max-width: 600px) {
+            .op-body { flex-direction: column; text-align: center; }
+            .op-logo-col { flex-direction: row; flex: none; gap: 16px; }
+            .op-spots-labels { flex-direction: column; gap: 2px; }
+            .op-heading { font-size: 17px; }
+        }
+
         /* Responsive Design */
         @media (max-width: 1100px) {
             .agency-content {
@@ -1902,7 +2391,7 @@
                         <li><a href="https://piyushnjha.com/view_blogs.php" target="_blank">Blog</a></li>
                         <li><a href="https://newbharatskills.in/aboutus.html">About Us</a></li>
                         <li><a href="https://newbharatskills.in/contact.php">Contact</a></li>
-                        <li><a href="https://newbharatskills.in/workshops.html" class="btn">Enroll Now</a></li>
+                    
                     </ul>
                 </nav>
             </div>
@@ -2517,12 +3006,57 @@
         </div>
     </section>
 
+    <!-- 20% Off Section Banner -->
+    <section class="offer-section-banner">
+        <div class="container">
+            <div class="osb-card">
+                <!-- Logo panel -->
+                <div class="osb-logo-panel">
+                    <div class="osb-logo-wrap">
+                        <img src="New-BharatSkills-logo-removebg-preview.png" alt="NewBharatSkills Logo" class="osb-logo">
+                    </div>
+                </div>
+                <div class="osb-divider"></div>
+                <!-- Content -->
+                <div class="osb-content">
+                    <div class="osb-tags">
+                        <span class="osb-tag osb-tag-blue">Limited Time Offer</span>
+                        <span class="osb-tag osb-tag-orange">First 100 Customers</span>
+                    </div>
+                    <div class="osb-heading">
+                        Get <span class="osb-hl-o">20% Off</span> Your<br>
+                        <span class="osb-hl-c">360° Virtual Tour</span> Project
+                    </div>
+                    <p class="osb-sub">Bring your business to life online with an immersive virtual experience. Book early — this exclusive discount won't last.</p>
+                    <div class="osb-spots-row">
+                        <div class="osb-spots-labels">
+                            <span><strong>37 spots</strong> already claimed</span>
+                            <span>63 remaining</span>
+                        </div>
+                        <div class="osb-progress-track">
+                            <div class="osb-progress-fill" id="osbProgressFill"></div>
+                        </div>
+                    </div>
+                    <div class="osb-cta-row">
+                        <a href="#cta-form" class="osb-btn">Claim My 20% Off &rarr;</a>
+                        <span class="osb-terms">*New projects only &middot; No promo code needed</span>
+                    </div>
+                </div>
+                <!-- Big % panel -->
+                <div class="osb-big">
+                    <div class="osb-big-num">20%</div>
+                    <div class="osb-big-word">OFF</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
-    <section class="cta-section">
+    <section class="cta-section" id="cta-form">
         <div class="container">
             <h2>Ready to Showcase Your Business in 360?</h2>
             <p>Get your own professional virtual tour and join our satisfied clients. Increase engagement, build trust, and stand out from competitors with an immersive 360 experience.</p>
-            <a href="https://newbharatskills.in/contact.php" class="btn btn-light">Get Your Virtual Tour</a>
+        
             <div class="cta-form-wrapper">
                 <iframe data-tally-src="https://tally.so/embed/dWYY4N?dynamicHeight=1" loading="lazy" width="100%" height="845" frameborder="0" marginheight="0" marginwidth="0" title="Get Your Free Quote"></iframe>
                 <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
@@ -2568,38 +3102,68 @@
         </div>
     </footer>
 
-    <!-- COMMENTED OUT: Christmas Popup - ADDED HERE
-    <div class="popup-overlay" id="popupOverlay">
-        <div class="popup-container">
-            <img 
-                src="nbsI.png" 
-                alt="Christmas Sale - 360 Virtual Tour Service"
-                class="popup-image"
-            >
-            
-            <button 
-                class="popup-close-btn" 
-                id="popupCloseBtn"
-                aria-label="Close popup"
-                title="Close"
-            >
-                ✕
-            </button>
-
-            <a 
-                href="https://newbharatskills.in/contact.php" 
-                class="popup-contact-btn"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Contact Us for 360 Virtual Tour"
-            >
-                Contact Us
-            </a>
+    <!-- 20% Off Popup -->
+    <div class="offer-popup-overlay" id="offerPopupOverlay">
+        <div class="op-card">
+            <!-- Header -->
+            <div class="op-header">
+                <div class="op-brand">
+                    <img src="New-BharatSkills-logo-removebg-preview.png" alt="NewBharatSkills Logo" class="op-brand-logo">
+                    <div>
+                        <div class="op-brand-name">JHA<span>360</span></div>
+                        <div class="op-brand-tagline">Immersive Virtual Tours</div>
+                    </div>
+                </div>
+                <button class="op-close" id="offerPopupClose" aria-label="Close offer popup">&#x2715;</button>
+            </div>
+            <!-- Body -->
+            <div class="op-body">
+                <!-- Logo + discount -->
+                <div class="op-logo-col">
+                    <div class="op-logo-wrap">
+                        <img src="New-BharatSkills-logo-removebg-preview.png" alt="NewBharatSkills Logo" class="op-logo-img">
+                    </div>
+                    <div class="op-disc-pill">
+                        <div class="op-disc-num">20%</div>
+                        <div class="op-disc-word">OFF</div>
+                    </div>
+                </div>
+                <!-- Text -->
+                <div class="op-text">
+                    <div class="osb-tags">
+                        <span class="osb-tag osb-tag-blue">Exclusive Launch Offer</span>
+                    </div>
+                    <div class="op-heading">
+                        <span class="op-hl-o">20% Off</span> Your<br>
+                        <span class="op-hl-c">360° Virtual Tour</span> Project
+                    </div>
+                    <p class="op-desc">Be among the first 100 businesses to showcase your space with a stunning immersive virtual tour — gyms, resorts, restaurants, retail &amp; more.</p>
+                    <div class="op-spots-row">
+                        <div class="op-spots-labels">
+                            <span><strong>37 of 100 spots</strong> claimed</span>
+                            <span class="op-left">63 left!</span>
+                        </div>
+                        <div class="op-progress-track">
+                            <div class="op-progress-fill" id="opProgressFill"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="#cta-form" class="op-btn" id="offerPopupCta">Get My 20% Off &rarr;</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer -->
+            <div class="op-footer">
+                <div class="op-live-row">
+                    <span class="op-dot"></span>
+                    <span>Valid for first 100 customers only &middot; No code needed</span>
+                </div>
+                <button class="op-skip" id="offerPopupSkip">Not interested</button>
+            </div>
         </div>
     </div>
-    END OF COMMENTED POPUP HTML -->
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Mobile Menu Toggle
         document.querySelector('.mobile-menu').addEventListener('click', function() {
             const nav = document.querySelector('nav');
@@ -2799,103 +3363,73 @@
             heroVideo.setAttribute('autoplay', '');
         }
 
-        /* COMMENTED OUT: Christmas Popup Integration - ADDED HERE
-        const CHRISTMAS_POPUP_CONFIG = {
-            popupId: 'popupOverlay',
-            closeButtonId: 'popupCloseBtn',
-            storageKey: 'jha360_christmas_popup_closed',
-            delayMs: 1000, // Delay before showing popup (ms)
-            enabled: true // Set to false to disable popup
-        };
+        // Offer Popup – auto-show after 3 seconds, dismiss remembers for session
+        (function() {
+            var overlay   = document.getElementById('offerPopupOverlay');
+            var closeBtn  = document.getElementById('offerPopupClose');
+            var skipBtn   = document.getElementById('offerPopupSkip');
+            var fillSb    = document.getElementById('osbProgressFill');
+            var fillOp    = document.getElementById('opProgressFill');
+            var ctaBtn    = document.getElementById('offerPopupCta');
+            var KEY       = 'jha360_offer_popup_closed';
 
-        class ChristmasPopup {
-            constructor(config) {
-                this.config = config;
-                this.overlay = document.getElementById(config.popupId);
-                this.closeBtn = document.getElementById(config.closeButtonId);
-                this.init();
+            function openPopup() {
+                overlay.classList.add('op-active');
+                document.body.classList.add('offer-popup-open');
+                // Animate progress bar
+                setTimeout(function() {
+                    if (fillOp) fillOp.style.width = '37%';
+                }, 120);
+            }
+            function closePopup() {
+                overlay.classList.remove('op-active');
+                document.body.classList.remove('offer-popup-open');
+                sessionStorage.setItem(KEY, 'true');
             }
 
-            init() {
-                if (!this.config.enabled) return;
-
-                // Attach event listeners
-                this.closeBtn.addEventListener('click', () => this.close());
-                this.overlay.addEventListener('click', (e) => this.handleOverlayClick(e));
-
-                // Show popup with delay
-                this.showWithDelay();
+            // Animate section banner progress bar on scroll into view
+            if (fillSb) {
+                var sbObserver = new IntersectionObserver(function(entries) {
+                    if (entries[0].isIntersecting) {
+                        fillSb.style.width = '37%';
+                        sbObserver.disconnect();
+                    }
+                }, { threshold: 0.3 });
+                sbObserver.observe(fillSb.closest('.osb-card'));
             }
 
-            showWithDelay() {
-                // Check if popup was already closed in this session
-                if (this.wasClosedThisSession()) {
-                    return;
-                }
-
-                setTimeout(() => {
-                    this.show();
-                }, this.config.delayMs);
+            // Show popup after 3 s if not dismissed this session
+            if (sessionStorage.getItem(KEY) !== 'true') {
+                setTimeout(openPopup, 3000);
             }
 
-            show() {
-                this.overlay.classList.add('active');
-                document.body.classList.add('popup-open');
-            }
-
-            close() {
-                this.overlay.classList.remove('active');
-                document.body.classList.remove('popup-open');
-                
-                // Mark popup as closed in session storage
-                this.markAsClosedThisSession();
-            }
-
-            handleOverlayClick(e) {
-                // Close only if clicking on overlay, not the popup container
-                if (e.target === this.overlay) {
-                    this.close();
-                }
-            }
-
-            wasClosedThisSession() {
-                return sessionStorage.getItem(this.config.storageKey) === 'true';
-            }
-
-            markAsClosedThisSession() {
-                sessionStorage.setItem(this.config.storageKey, 'true');
-            }
-
-            // Public method to manually open popup
-            open() {
-                this.show();
-                sessionStorage.removeItem(this.config.storageKey);
-            }
-
-            // Public method to manually close popup
-            closePopup() {
-                this.close();
-            }
-        }
-
-        // Initialize Christmas popup when DOM is ready
-        document.addEventListener('DOMContentLoaded', () => {
-            window.christmasPopup = new ChristmasPopup(CHRISTMAS_POPUP_CONFIG);
-        });*/
+            closeBtn.addEventListener('click', closePopup);
+            skipBtn.addEventListener('click', closePopup);
+            ctaBtn.addEventListener('click', function() {
+                closePopup();
+                // Small delay lets the popup close before scroll
+                setTimeout(function() {
+                    var target = document.getElementById('cta-form');
+                    if (target) target.scrollIntoView({ behavior: 'smooth' });
+                }, 50);
+            });
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) closePopup();
+            });
+        })();
 
 // Keyboard accessibility - close on Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && window.christmasPopup) {
-                window.christmasPopup.close();
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                var overlay = document.getElementById('offerPopupOverlay');
+                if (overlay && overlay.classList.contains('op-active')) {
+                    overlay.classList.remove('op-active');
+                    document.body.classList.remove('offer-popup-open');
+                    sessionStorage.setItem('jha360_offer_popup_closed', 'true');
+                }
             }
         });
     </script>
 
     <!-- ============================================================
-         TALLY.SO WIDGET SCRIPT
-         This connects the "Get Free Quote" button to your Tally form
-         Form ID: 2ENqZe
-         ============================================================ -->
-    <script>
-		window.TallyConfig = {
-		  "f
+         TALLY.
