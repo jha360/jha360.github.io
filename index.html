@@ -3030,8 +3030,8 @@
                     <p class="osb-sub">Bring your business to life online with an immersive virtual experience. Book early — this exclusive discount won't last.</p>
                     <div class="osb-spots-row">
                         <div class="osb-spots-labels">
-                            <span><strong>37 spots</strong> already claimed</span>
-                            <span>63 remaining</span>
+                            <span><strong>67 spots</strong> already claimed</span>
+                            <span>33 remaining</span>
                         </div>
                         <div class="osb-progress-track">
                             <div class="osb-progress-fill" id="osbProgressFill"></div>
@@ -3140,8 +3140,8 @@
                     <p class="op-desc">Be among the first 100 businesses to showcase your space with a stunning immersive virtual tour — gyms, resorts, restaurants, retail &amp; more.</p>
                     <div class="op-spots-row">
                         <div class="op-spots-labels">
-                            <span><strong>37 of 100 spots</strong> claimed</span>
-                            <span class="op-left">63 left!</span>
+                            <span><strong>67 of 100 spots</strong> claimed</span>
+                            <span class="op-left">33 left!</span>
                         </div>
                         <div class="op-progress-track">
                             <div class="op-progress-fill" id="opProgressFill"></div>
@@ -3378,7 +3378,7 @@
                 document.body.classList.add('offer-popup-open');
                 // Animate progress bar
                 setTimeout(function() {
-                    if (fillOp) fillOp.style.width = '37%';
+                    if (fillOp) fillOp.style.width = '67%';
                 }, 120);
             }
             function closePopup() {
@@ -3391,7 +3391,7 @@
             if (fillSb) {
                 var sbObserver = new IntersectionObserver(function(entries) {
                     if (entries[0].isIntersecting) {
-                        fillSb.style.width = '37%';
+                        fillSb.style.width = '67%';
                         sbObserver.disconnect();
                     }
                 }, { threshold: 0.3 });
