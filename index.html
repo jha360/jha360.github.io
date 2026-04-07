@@ -3378,7 +3378,7 @@
                 document.body.classList.add('offer-popup-open');
                 // Animate progress bar
                 setTimeout(function() {
-                    if (fillOp) fillOp.style.width = '67%';
+                    if (fillOp) fillOp.style.width = '69%';
                 }, 120);
             }
             function closePopup() {
@@ -3391,7 +3391,7 @@
             if (fillSb) {
                 var sbObserver = new IntersectionObserver(function(entries) {
                     if (entries[0].isIntersecting) {
-                        fillSb.style.width = '67%';
+                        fillSb.style.width = '69%';
                         sbObserver.disconnect();
                     }
                 }, { threshold: 0.3 });
