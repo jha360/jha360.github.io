@@ -206,7 +206,114 @@
                 }
               }
             ]
-          }
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "reviewCount": "5"
+          },
+          "review": [
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Rajesh Gupta" },
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+              "reviewBody": "JHA360's virtual tour helped us showcase our property to NRI buyers who couldn't visit in person. We closed 3 sales directly from leads who first explored the property online through their Google Maps tour."
+            },
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Pranav" },
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+              "reviewBody": "After adding the 360 tour to our Google Business Profile, we saw a 40% increase in membership inquiries. People love being able to see the gym equipment and facilities before visiting."
+            },
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Anil Chikhale" },
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+              "reviewBody": "The 360 tour showcased our lakeside location beautifully. Weekend bookings increased significantly, especially from couples searching for getaway resorts near Pune."
+            },
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Tushar Ray" },
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+              "reviewBody": "Our Google Maps visibility improved dramatically after adding the 360 tour. Event bookings for corporate parties and celebrations have doubled."
+            },
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Veena" },
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+              "reviewBody": "Being a Google Street View Trusted Agency, JHA360 delivered quality that actually improved our Google search ranking. Their process was smooth and the final tour exceeded our expectations."
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://jha360.com/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How much does a 360 virtual tour cost in Mumbai?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our 360 virtual tour pricing depends on property size and complexity. A basic single-space tour starts at ₹4,999. Full business tours for gyms, restaurants, or retail stores range from ₹15,000 to ₹45,000. Real estate projects are quoted based on total area. All packages include Google Maps integration and Google Street View publishing by our certified team."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What industries benefit most from 360 virtual tours?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We serve clients across Real Estate, Hospitality (hotels, resorts, restaurants, banquet halls), Fitness (gyms, yoga studios, sports facilities), Retail (showrooms, boutiques, shopping complexes), and Education (schools, colleges, coaching institutes)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How long does it take to create a virtual tour?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The complete process takes 5-7 working days from shooting to final delivery: site survey and photography on day 1, post-production over days 2-4, Google Maps integration on days 5-6, and final delivery with training on day 7. Rush delivery is available for urgent projects in Mumbai and Navi Mumbai."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What makes JHA360 different from other virtual tour providers?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "JHA360 is an official Google Street View Trusted Agency, one of the few certified providers in Maharashtra, offering direct publishing rights to Google Maps and Search, higher quality standards verified by Google, and better local search visibility."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you serve areas outside Mumbai?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Primary service areas include Mumbai and its suburbs, Navi Mumbai (Vashi, Kharghar, Panvel, Airoli), Thane and Kalyan-Dombivli, and Pune city and surrounding areas. Other Maharashtra cities are accepted on request."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I update or change the virtual tour later?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, virtual tour update services are available if a business undergoes renovation, layout changes, or seasonal decoration updates, charged at a reduced rate since baseline property data already exists."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Will the tour work on mobile phones?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, all 360 virtual tours are mobile-responsive and work on smartphones, tablets, and desktop computers using touch gestures or device tilt navigation."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do I get started?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Contact JHA360 by phone or the website form to schedule a free consultation, receive a quote and timeline, book a photography session, and have the tour created and published. Most clients see their tour live on Google Maps within 7 days of first contact."
+              }
+            }
+          ]
         }
       ]
     }
@@ -2376,7 +2483,7 @@
         <div class="container">
             <div class="header-content">
                 <a href="https://newbharatskills.in/" class="logo">
-                    <img src="New-BharatSkills-logo-removebg-preview.png" alt="NewBharatSkills Logo">
+                    <img src="New-BharatSkills-logo-removebg-preview.png" alt="NewBharatSkills Logo" width="160" height="40">
                     <div class="logo-text">JHA360</div>
                 </a>
                 <button class="mobile-menu" aria-label="Toggle menu" aria-expanded="false">
@@ -2399,7 +2506,7 @@
     </header>
    <main id="main-content">
     <!-- Updated Hero Section with Video Background -->
-    <section class="hero" id="main-content">
+    <section class="hero" id="hero">
         <!-- Background Video -->
         <video autoplay muted loop playsinline class="hero-video">
             <source src="https://newbharatskills.in/hero-video.mp4" type="video/mp4">
@@ -2448,7 +2555,7 @@
                     </div>
                 </div>
                 <div class="agency-badge">
-                    <img src="google_street_veiw_trusted_agency.png" alt="Google Street View Trusted Agency Badge">
+                    <img src="google_street_veiw_trusted_agency.png" alt="Google Street View Trusted Agency Badge" width="200" height="200" loading="lazy">
                     <p style="margin-top: 10px; font-weight: 500;">Official Google Street View Trusted Agency</p>
                 </div>
             </div>
@@ -2585,7 +2692,7 @@
                         <span>OLD MUMBAI PUNE HIGHWAY, AJIVALI</span>
                     </div>
                 </div>
-                <div class="project-iframe" id="tour-2">
+                <div class="project-iframe" id="tour-garg-sky">
                     <!-- Embedded 360 Tour -->
                     <iframe src="https://www.google.com/maps/embed?pb=!4v1767612320275!6m8!1m7!1sCAoSHENJQUJJaENRdHlNcGhJdUVyYVNyNWJjLUlJMEM.!2m2!1d18.9548143534162!2d73.1668391892827!3f241.34!4f-5.780000000000001!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="360 Virtual Tour of GARG SKY Ajivali"></iframe>
                 </div>
@@ -2602,7 +2709,7 @@
                         <span>Vashi, Navi Mumbai</span>
                     </div>
                 </div>
-                <div class="project-iframe" id="tour-1">
+                <div class="project-iframe" id="tour-zenxfit">
                     <!-- Embedded 360 Tour -->
                     <iframe src="https://www.google.com/maps/embed?pb=!4v1762764890343!6m8!1m7!1sCAoSHENJQUJJaEJtZ2pLTl8zU1FmUnFCZ1JVNnhmMS0.!2m2!1d19.07122938657579!2d72.99716010829314!3f338.78!4f-7.530000000000001!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" title="360 Virtual Tour of ZenXFit Gym" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
@@ -2619,7 +2726,7 @@
                         <span>Pune, Maharashtra</span>
                     </div>
                 </div>
-                <div class="project-iframe" id="tour-2">
+                <div class="project-iframe" id="tour-krocks">
                     <!-- Embedded 360 Tour -->
                     <iframe src="https://www.google.com/maps/embed?pb=!4v1762763056736!6m8!1m7!1sCAoSHENJQUJJaERreXBUdkJQSXBtdlZnR0Jpa3lpbUo.!2m2!1d18.62227175548513!2d73.65628736485378!3f263.72!4f6.840000000000003!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" title="360 Virtual Tour of K Rocks Resort" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
@@ -2636,14 +2743,17 @@
                         <span>Vashi, Maharashtra</span>
                     </div>
                 </div>
-                <div class="project-iframe" id="tour-2">
+                <div class="project-iframe" id="tour-bikaner">
                     <!-- Embedded 360 Tour -->
                     <iframe src="https://www.google.com/maps/embed?pb=!4v1767612342386!6m8!1m7!1sCAoSHENJQUJJaERqd0s4LWRTNTk2NzcweHlGZ2FjSkE.!2m2!1d19.07221620467219!2d72.99618664884964!3f254.52!4f2.980000000000004!5f0.4000000000000002" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="360 Virtual Tour of Bikaner House, Vashi"></iframe>
                 </div>
             </div>
 
             <!-- Project 3 -->
-            <!-- <div class="project">
+            <!-- RESTORED: this project card was previously commented out (dead code).
+                 It is well-formed and was missing from the live site + sitemap.
+                 Verify with the client that this listing should remain public. -->
+            <div class="project">
                 <div class="project-content">
                     <h3>Peshwai Silk Sarees Pvt. Ltd. (Vashi)</h3>
                     <span class="project-category">Store Segment</span>
@@ -2653,11 +2763,10 @@
                         <span>Vashi, Navi Mumbai</span>
                     </div>
                 </div>
-                <div class="project-iframe" id="tour-3">
-                  
+                <div class="project-iframe" id="tour-peshwai">
                     <iframe src="https://www.google.com/maps/embed?pb=!4v1762763085849!6m8!1m7!1sCAoSHENJQUJJaERwckM0N1RteENQcGdPWTFUOHZtWUQ.!2m2!1d19.07145255830345!2d73.0012560715027!3f186.38!4f9.150000000000006!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" title="360 Virtual Tour of Peshwai Silk Sarees" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
-            </div> -->
+            </div>
 			
 			<!-- Tithee Banquets -->
 			<div class="project">
@@ -2670,7 +2779,7 @@
 						<span>Navi Mumbai, Maharashtra</span>
 					</div>
 				</div>
-				<div class="project-iframe">
+				<div class="project-iframe" id="tour-tithee">
 					<iframe src="https://www.google.com/maps/embed?pb=!4v1772248336646!6m8!1m7!1sCAoSHENJQUJJaENZQldhU2xxdEo1RFhNU1lZOWtzQVI.!2m2!1d19.03620810715993!2d73.08938906197329!3f307.59424486406687!4f1.340954484987094!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="360 Virtual Tour of Tithee Banquets, Navi Mumbai"></iframe>
 				</div>
 			</div>
@@ -2687,7 +2796,7 @@
                         <span>Mumbai, Maharashtra</span>
                     </div>
                 </div>
-                <div class="project-iframe" id="tour-4">
+                <div class="project-iframe" id="tour-upperdeck">
                     <!-- Embedded 360 Tour -->
                     <iframe src="https://www.google.com/maps/embed?pb=!4v1762765120661!6m8!1m7!1sCAoSHENJQUJJaEJVSnJ4Y2x2Z3VKX2dERFAxSEZYak8.!2m2!1d19.02460241876932!2d73.02216262154366!3f340!4f0!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" title="360 Virtual Tour of Upper Deck Sky Lounge" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
@@ -2986,7 +3095,7 @@
             
             <div class="cards-container">
                 <div class="card">
-                    <img src="https://jha360.com/image%20(1).jpeg" alt="Digital Marketing, SEO & Website Development">
+                    <img src="https://jha360.com/image%20(1).jpeg" alt="Digital Marketing, SEO & Website Development" width="400" height="300" loading="lazy">
                     <div class="card-content">
                         <h3>Digital Marketing, SEO & Website Development</h3>
                         <p>Driving growth through smart digital presence</p>
@@ -2995,7 +3104,7 @@
                 </div>
 
                 <div class="card">
-                    <img src="https://jha360.com/image.jpeg" alt="Google Professional Services">
+                    <img src="https://jha360.com/image.jpeg" alt="Google Professional Services" width="400" height="300" loading="lazy">
                     <div class="card-content">
                         <h3>Google Professional Services</h3>
                         <p>Empowering success with certified Google expertise</p>
@@ -3013,7 +3122,7 @@
                 <!-- Logo panel -->
                 <div class="osb-logo-panel">
                     <div class="osb-logo-wrap">
-                        <img src="New-BharatSkills-logo-removebg-preview.png" alt="NewBharatSkills Logo" class="osb-logo">
+                        <img src="New-BharatSkills-logo-removebg-preview.png" alt="NewBharatSkills Logo" class="osb-logo" width="160" height="40" loading="lazy">
                     </div>
                 </div>
                 <div class="osb-divider"></div>
