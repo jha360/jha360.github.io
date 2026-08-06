@@ -1,53 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  
+
   <!-- Homepage - Main URL -->
   <url>
     <loc>https://jha360.com/</loc>
-    <lastmod>2026-03-24</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    
-    <!-- Images for this page -->
+
+    <!-- Images actually present on this page -->
     <image:image>
       <image:loc>https://jha360.com/New-BharatSkills-logo-removebg-preview.png</image:loc>
-      <image:caption>JHA360 NewBharatSkills Logo</image:caption>
+      <image:caption>JHA360 by NewBharatSkills logo</image:caption>
       <image:title>JHA360 - 360 Virtual Tours</image:title>
     </image:image>
-    
+
     <image:image>
       <image:loc>https://jha360.com/google_street_veiw_trusted_agency.png</image:loc>
-      <image:caption>Google Street View Trusted Agency Badge</image:caption>
-      <image:title>Official Google Street View Trusted Agency</image:title>
+      <image:caption>Official Google Street View Trusted Agency badge</image:caption>
+      <image:title>Google Street View Trusted Agency Badge</image:title>
     </image:image>
-  
+
+    <image:image>
+      <image:loc>https://jha360.com/image%20(1).jpeg</image:loc>
+      <image:caption>Digital Marketing, SEO and Website Development services</image:caption>
+      <image:title>Digital Marketing, SEO &amp; Website Development</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://jha360.com/image.jpeg</image:loc>
+      <image:caption>Google Professional Services</image:caption>
+      <image:title>Google Professional Services</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://jha360.com/og-image.jpg</image:loc>
+      <image:caption>JHA360 - Professional 360 Virtual Tours</image:caption>
+      <image:title>JHA360 Social Share Image</image:title>
+    </image:image>
+
   </url>
-  
-  <!-- 
-    Note: This is a single-page site. If you add more pages, add them here.
-    
+
+  <!--
+    Note: This is a single-page site. If dedicated location or service pages
+    are added (recommended - see SEO report, Local SEO section), add them here
+    with their own <loc>, <lastmod>, <changefreq> and <priority>.
+
     Example for additional pages:
     <url>
-      <loc>https://jha360.com/contact</loc>
-      <lastmod>2026-01-19</lastmod>
+      <loc>https://jha360.com/360-virtual-tour-mumbai</loc>
+      <lastmod>2026-08-07</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
     </url>
   -->
-  
+
 </urlset>
 
-<!-- 
+<!--
   Sitemap Best Practices (from sitemaps.org and Google):
-  
-  1. Update lastmod when content changes
+
+  1. Update lastmod when content changes (only when content actually changes -
+     do not "freshen" the date artificially, Google increasingly ignores dates
+     it doesn't trust).
   2. changefreq values: always, hourly, daily, weekly, monthly, yearly, never
   3. priority: 0.0 to 1.0 (1.0 = highest priority, 0.5 = default)
   4. Max 50,000 URLs per sitemap
   5. Max 50MB uncompressed file size
-  6. Use sitemap index if you have multiple sitemaps
-  
+  6. Use a sitemap index if you have multiple sitemaps
+
   References:
   - https://www.sitemaps.org/protocol.html
   - https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap
