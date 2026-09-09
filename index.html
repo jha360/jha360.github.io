@@ -371,10 +371,9 @@
     <!-- Updated Hero Section with Video Background -->
     <section class="hero" id="hero">
         <!-- Background Video -->
-        <video muted loop playsinline preload="none" class="hero-video" id="hero-video">
-            <!-- src intentionally NOT set here - added by JS after the page
-                 is interactive, so this large cross-origin file never competes
-                 with critical render-path resources for bandwidth. -->
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="https://newbharatskills.in/hero-video.mp4" type="video/mp4">
+            <!-- Fallback image if video doesn't load -->
         </video>
         
         <!-- Overlay -->
