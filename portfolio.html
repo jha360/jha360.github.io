@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore JHA360's portfolio of immersive 360 virtual tours for real estate, gyms, resorts, banquets, and retail stores across Mumbai, Navi Mumbai, and Pune.">
+    <meta name="keywords" content="360 virtual tour portfolio, Google Street View portfolio, 360 tour examples Mumbai, virtual showroom tour">
+    <meta name="author" content="JHA360 - NewBharatSkills">
+    <meta name="robots" content="index, follow">
+    
+    <link rel="canonical" href="https://jha360.com/portfolio.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Portfolio | JHA360 - 360 Virtual Tours">
+    <meta property="og:description" content="Explore our portfolio of interactive 360 virtual business tours and Google Street View walkthroughs.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jha360.com/portfolio.html">
+    <meta property="og:image" content="https://jha360.com/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+    
+    <!-- Font Awesome -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    
+    <title>Our Portfolio | JHA360 Virtual Tours</title>
+    
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--primary:#0a58ca;--secondary:#ff6b00;--dark:#333;--light:#f8f9fa;--gray:#6c757d;--white:#ffffff;--shadow:0 4px 12px rgba(0,0,0,0.1);--transition:all 0.3s ease;--success:#28a745}
+        body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;line-height:1.6;color:var(--dark);background-color:var(--light);scroll-behavior:smooth}
+        
+        header{background-color:var(--white);padding:1rem 0;box-shadow:var(--shadow);position:sticky;top:0;z-index:1000}
+        .container{width:90%;max-width:1200px;margin:0 auto}
+        .header-content{display:flex;justify-content:space-between;align-items:center}
+        .logo{display:flex;align-items:center;text-decoration:none}
+        .logo img{height:50px;width:auto}
+        .logo-text{color:var(--dark);font-size:1.5rem;font-weight:700;margin-left:10px}
+        nav ul{display:flex;list-style:none}
+        nav ul li{margin-left:1.5rem}
+        nav ul li a{color:var(--dark);text-decoration:none;font-weight:500;transition:var(--transition);padding:0.5rem 0;position:relative}
+        nav ul li a.active{color:var(--secondary);font-weight:700}
+        nav ul li a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background-color:var(--secondary);transition:var(--transition)}
+        nav ul li a:hover::after,nav ul li a.active::after{width:100%}
+        nav ul li a:hover{color:var(--secondary)}
+        .mobile-menu{display:none;color:var(--primary);font-size:1.5rem;cursor:pointer;background:none;border:none}
+
+        /* Page Hero */
+        .page-hero{background:linear-gradient(135deg,#0a58ca 0%,#063a8c 100%);color:var(--white);padding:4rem 0 3rem;text-align:center}
+        .page-hero h1{font-size:2.8rem;margin-bottom:1rem}
+        .page-hero p{font-size:1.15rem;max-width:750px;margin:0 auto;opacity:0.95}
+
+        /* Filter Controls */
+        .filter-container{display:flex;justify-content:center;flex-wrap:wrap;gap:0.75rem;margin:2.5rem 0 1.5rem}
+        .filter-btn{background:var(--white);border:1px solid #d0d7de;padding:0.5rem 1.2rem;border-radius:25px;font-size:0.9rem;font-weight:600;color:var(--dark);cursor:pointer;transition:var(--transition)}
+        .filter-btn:hover,.filter-btn.active{background:var(--primary);color:var(--white);border-color:var(--primary);box-shadow:0 3px 10px rgba(10,88,202,0.25)}
+
+        /* Portfolio Items */
+        .portfolio-page{padding:2rem 0 4rem}
+        .project{display:flex;margin-bottom:3rem;background:var(--white);border-radius:10px;overflow:hidden;box-shadow:var(--shadow);transition:var(--transition)}
+        .project:hover{transform:translateY(-6px);box-shadow:0 15px 30px rgba(0,0,0,0.12)}
+        .project-content{flex:1;padding:2.5rem;display:flex;flex-direction:column;justify-content:center}
+        .project-iframe{flex:1.2;min-height:400px;position:relative}
+        .project-iframe iframe{width:100%;height:100%;border:none}
+        .project h2{font-size:1.8rem;color:var(--primary);margin-bottom:0.5rem}
+        .project-category{display:inline-block;background-color:var(--primary);color:var(--white);padding:0.3rem 1rem;border-radius:20px;font-size:0.85rem;margin-bottom:1rem;font-weight:600;align-self:flex-start}
+        .project p{color:var(--gray);margin-bottom:1.5rem;font-size:0.95rem;line-height:1.6}
+        .project-location{display:flex;align-items:center;color:var(--gray);margin-top:auto;font-size:0.9rem}
+        .project-location i{margin-right:8px;color:var(--primary)}
+        .project:nth-child(even){flex-direction:row-reverse}
+        .project.hide{display:none}
+
+        /* CTA Banner */
+        .portfolio-cta{background:linear-gradient(135deg,var(--primary) 0%,#0d6efd 100%);color:var(--white);padding:3.5rem 0;text-align:center}
+        .portfolio-cta h3{font-size:2rem;margin-bottom:0.8rem}
+        .portfolio-cta p{margin-bottom:1.5rem;font-size:1.05rem;opacity:0.9}
+        .btn-cta{display:inline-block;background:#ff6b00;color:var(--white);padding:0.85rem 2.2rem;border-radius:30px;text-decoration:none;font-weight:700;transition:var(--transition);box-shadow:0 4px 15px rgba(255,107,0,0.3)}
+        .btn-cta:hover{background:#e55a00;transform:translateY(-2px);box-shadow:0 8px 20px rgba(255,107,0,0.45)}
+
+        /* Footer */
+        footer{background-color:var(--dark);color:var(--white);padding:3rem 0 1.5rem}
+        .footer-content{display:flex;justify-content:space-between;flex-wrap:wrap;margin-bottom:2rem}
+        .footer-column{flex:1;min-width:250px;margin-bottom:1.5rem}
+        .footer-column h3{font-size:1.2rem;margin-bottom:1.2rem;position:relative;padding-bottom:0.5rem}
+        .footer-column h3::after{content:'';position:absolute;bottom:0;left:0;width:40px;height:2px;background-color:var(--secondary)}
+        .footer-column ul{list-style:none}
+        .footer-column ul li{margin-bottom:0.8rem;display:flex;align-items:center}
+        .footer-column ul li i{margin-right:10px;width:20px;color:var(--secondary)}
+        .footer-column ul li a{color:#ccc;text-decoration:none;transition:var(--transition)}
+        .footer-column ul li a:hover{color:var(--secondary);padding-left:5px}
+        .social-links{display:flex;gap:1rem;margin-top:1rem}
+        .social-links a{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;background-color:rgba(255,255,255,0.1);border-radius:50%;color:var(--white);transition:var(--transition);text-decoration:none}
+        .social-links a:hover{background-color:var(--secondary);transform:translateY(-3px)}
+        .copyright{text-align:center;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.1);color:#aaa;font-size:0.9rem}
+
+        @media (max-width:992px){
+            .project{flex-direction:column !important}
+            .project-iframe{min-height:350px}
+        }
+        @media (max-width:768px){
+            .header-content{flex-direction:column;text-align:center}
+            .logo{margin-bottom:1rem}
+            nav ul{margin-top:1rem;flex-wrap:wrap;justify-content:center}
+            nav ul li{margin:0.5rem 0.8rem}
+            .page-hero h1{font-size:2.2rem}
+            .project-content{padding:1.5rem}
+        }
+        @media (max-width:576px){
+            .mobile-menu{display:block;position:absolute;right:20px;top:20px}
+            nav{display:none;width:100%;margin-top:1rem}
+            nav.active{display:block}
+            nav ul{flex-direction:column}
+            nav ul li{margin:0.5rem 0;width:100%;text-align:center}
+            nav ul li a{display:block;padding:0.5rem}
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header id="top">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <img src="/Images/New-BharatSkills-logo-removebg-preview.png" alt="NewBharatSkills Logo" width="160" height="40">
+                    <div class="logo-text">JHA360</div>
+                </a>
+                <button class="mobile-menu" aria-label="Toggle menu" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <nav aria-label="Main navigation">
+                    <ul>
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                        <li><a href="/aireview.html">AI Review</a></li>
+                        <li><a href="/blog.html">Blog</a></li>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Header -->
+        <section class="page-hero">
+            <div class="container">
+                <h1>Our 360° Virtual Tour Portfolio</h1>
+                <p>Browse live, interactive Google Street View walkthroughs delivered for clients across Maharashtra.</p>
+            </div>
+        </section>
+
+        <!-- Portfolio Listing -->
+        <section class="portfolio-page">
+            <div class="container">
+                
+                <!-- Category Filter -->
+                <div class="filter-container">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="real-estate">Real Estate</button>
+                    <button class="filter-btn" data-filter="gym">Gym & Fitness</button>
+                    <button class="filter-btn" data-filter="resort">Resorts </button>
+                    <button class="filter-btn" data-filter="retail">Retail & Stores</button>
+                    <button class="filter-btn" data-filter="banquet">Banquets</button>
+                    <button class="filter-btn" data-filter="hospitality">Hospitality</button>
+                </div>
+
+                <!-- Project 1: Garg Sky -->
+                <div class="project" data-category="real-estate">
+                    <div class="project-content">
+                        <h2>GARG SKY Ajivali</h2>
+                        <span class="project-category">Real Estate</span>
+                        <p>Professional 360 virtual tour for GARG SKY Ajivali residential project in Panvel, Maharashtra. Our Google Street View Trusted photography showcases premium 2BHK apartments, rooftop amenities, and Mumbai-Pune Expressway connectivity.</p>
+                        <div class="project-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>OLD MUMBAI PUNE HIGHWAY, AJIVALI</span>
+                        </div>
+                    </div>
+                    <div class="project-iframe">
+                        <iframe src="https://www.google.com/maps/embed?pb=!4v1767612320275!6m8!1m7!1sCAoSHENJQUJJaENRdHlNcGhJdUVyYVNyNWJjLUlJMEM.!2m2!1d18.9548143534162!2d73.1668391892827!3f241.34!4f-5.780000000000001!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="360 Virtual Tour of GARG SKY Ajivali"></iframe>
+                    </div>
+                </div>
+
+                <!-- Project 2: ZenXFit -->
+                <div class="project" data-category="gym">
+                    <div class="project-content">
+                        <h2>ZenXFit (Vashi)</h2>
+                        <span class="project-category">Gym Segment</span>
+                        <p>360 virtual tour for ZenXFit gym in Vashi, Navi Mumbai — a complete Google Maps virtual walkthrough showcasing cardio zones, strength training equipment, group fitness studios, and member amenities.</p>
+                        <div class="project-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Vashi, Navi Mumbai</span>
+                        </div>
+                    </div>
+                    <div class="project-iframe">
+                        <iframe src="https://www.google.com/maps/embed?pb=!4v1762764890343!6m8!1m7!1sCAoSHENJQUJJaEJtZ2pLTl8zU1FmUnFCZ1JVNnhmMS0.!2m2!1d19.07122938657579!2d72.99716010829314!3f338.78!4f-7.530000000000001!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" title="360 Virtual Tour of ZenXFit Gym" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+
+                <!-- Project 3: K Rocks Resort -->
+                <div class="project" data-category="resort">
+                    <div class="project-content">
+                        <h2>K Rocks Resort Lakeside Camping</h2>
+                        <span class="project-category">Resort Segment</span>
+                        <p>Immersive 360 virtual tour for K Rocks Resort lakeside camping in Pune, Maharashtra. Capturing scenic views, glamping tents, water sports facilities, and outdoor dining areas.</p>
+                        <div class="project-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Pune, Maharashtra</span>
+                        </div>
+                    </div>
+                    <div class="project-iframe">
+                        <iframe src="https://www.google.com/maps/embed?pb=!4v1762763056736!6m8!1m7!1sCAoSHENJQUJJaERreXBUdkJQSXBtdlZnR0Jpa3lpbUo.!2m2!1d18.62227175548513!2d73.65628736485378!3f263.72!4f6.840000000000003!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" title="360 Virtual Tour of K Rocks Resort" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+
+                <!-- Project 4: Bikaner House -->
+                <div class="project" data-category="retail">
+                    <div class="project-content">
+                        <h2>Bikaner House</h2>
+                        <span class="project-category">Store Segment</span>
+                        <p>360 virtual tour for Bikaner House ethnic wear showroom in Vashi, Navi Mumbai. Showcasing Rajasthani couture collections, bridal wear sections, and retail store experience.</p>
+                        <div class="project-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Vashi, Maharashtra</span>
+                        </div>
+                    </div>
+                    <div class="project-iframe">
+                        <iframe src="https://www.google.com/maps/embed?pb=!4v1767612342386!6m8!1m7!1sCAoSHENJQUJJaERqd0s4LWRTNTk2NzcweHlGZ2FjSkE.!2m2!1d19.07221620467219!2d72.99618664884964!3f254.52!4f2.980000000000004!5f0.4000000000000002" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="360 Virtual Tour of Bikaner House, Vashi"></iframe>
+                    </div>
+                </div>
+
+                <!-- Project 5: Peshwai Silk Sarees -->
+                <div class="project" data-category="retail">
+                    <div class="project-content">
+                        <h2>Peshwai Silk Sarees Pvt. Ltd.</h2>
+                        <span class="project-category">Store Segment</span>
+                        <p>Professional 360 virtual tour for Peshwai Silk Sarees showroom in Vashi. Displays luxury silk saree collections, designer wear racks, and customized shopping spaces.</p>
+                        <div class="project-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Vashi, Navi Mumbai</span>
+                        </div>
+                    </div>
+                    <div class="project-iframe">
+                        <iframe src="https://www.google.com/maps/embed?pb=!4v1762763085849!6m8!1m7!1sCAoSHENJQUJJaERwckM0N1RteENQcGdPWTFUOHZtWUQ.!2m2!1d19.07145255830345!2d73.0012560715027!3f186.38!4f9.150000000000006!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" title="360 Virtual Tour of Peshwai Silk Sarees" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+
+                <!-- Project 6: Tithee Banquets -->
+                <div class="project" data-category="banquet">
+                    <div class="project-content">
+                        <h2>Tithee Banquets</h2>
+                        <span class="project-category">Banquet Hall Segment</span>
+                        <p>360 virtual tour for Tithee Banquets in Navi Mumbai — showcasing elegant banquet halls, versatile event spaces, and premium ambient dining décor setups.</p>
+                        <div class="project-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Navi Mumbai, Maharashtra</span>
+                        </div>
+                    </div>
+                    <div class="project-iframe">
+                        <iframe src="https://www.google.com/maps/embed?pb=!4v1772248336646!6m8!1m7!1sCAoSHENJQUJJaENZQldhU2xxdEo1RFhNU1lZOWtzQVI.!2m2!1d19.03620810715993!2d73.08938906197329!3f307.59424486406687!4f1.340954484987094!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="360 Virtual Tour of Tithee Banquets, Navi Mumbai"></iframe>
+                    </div>
+                </div>
+
+                <!-- Project 7: Upper Deck Sky Lounge -->
+                <div class="project" data-category="resort">
+                    <div class="project-content">
+                        <h2>Upper Deck Sky Lounge</h2>
+                        <span class="project-category">Resorts</span>
+                        <p>360 virtual tour for Upper Deck Sky Lounge rooftop restaurant in Mumbai. Showcases dining areas, bar counter, and open rooftop city skyline views.</p>
+                        <div class="project-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Mumbai, Maharashtra</span>
+                        </div>
+                    </div>
+                    <div class="project-iframe">
+                        <iframe src="https://www.google.com/maps/embed?pb=!4v1762765120661!6m8!1m7!1sCAoSHENJQUJJaEJVSnJ4Y2x2Z3VKX2dERFAxSEZYak8.!2m2!1d19.02460241876932!2d73.02216262154366!3f340!4f0!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" title="360 Virtual Tour of Upper Deck Sky Lounge" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+
+                <!-- Project 8: PierONE -->
+                <div class="project" data-category="resort">
+                    <div class="project-content">
+                        <h2>PierONE</h2>
+                        <span class="project-category">Resorts</span>
+                        <p>360 virtual tour for For the first time, experience PierONE, MIDC Rabale (By Monarch) with a Virtual Walkthrough. Explore the restaurant, pick your favorite table, and book with confidence.</p>
+                        <div class="project-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Mumbai, Maharashtra</span>
+                        </div>
+                    </div>
+                    <div class="project-iframe">
+                        <iframe src="https://www.google.com/maps/embed?pb=!4v1788013625703!6m8!1m7!1sCAoSHENJQUJJaEEyVGxycUNPbXpIaGNwNUo4QzJoTE8.!2m2!1d19.13738166686215!2d73.00372619178462!3f353.8181817051281!4f-5.401863750696975!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" title="360 Virtual Tour of Upper Deck Sky Lounge" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+
+                
+                <!-- Project 9: Anant Palace -->
+                <div class="project" data-category="hospitality">
+                    <div class="project-content">
+                        <h2>Anant Palace</h2>
+                        <span class="project-category">Hospitality</span>
+                        <p>360 virtual tour Experience the elegant Suite Rooms at Anant Palace —perfect for business trips, family stays, or a relaxing getaway.</p>
+                        <div class="project-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Mumbai, Maharashtra</span>
+                        </div>
+                    </div>
+                    <div class="project-iframe">
+                        <iframe src="https://www.google.com/maps/embed?pb=!4v1788013108946!6m8!1m7!1sCAoSHENJQUJJaEFGWThhbW9BcHk2TXBhY3ZzLVY0ZlI.!2m2!1d19.12233522479431!2d72.99796752249613!3f164.44584595218242!4f3.3443886143580954!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" title="360 Virtual Tour of Upper Deck Sky Lounge" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+
+                <!-- Project 10: Khel Toy -->
+                <div class="project" data-category="retail">
+                    <div class="project-content">
+                        <h2> Khel Toys</h2>
+                        <span class="project-category">Store Segment</span>
+                        <p>360 virtual tour Experience here’s something special 🤫 You can now explore Khel Toys from anywhere! 🎉 </p>
+                        <div class="project-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Mumbai, Maharashtra</span>
+                        </div>
+                    </div>
+                    <div class="project-iframe">
+                        <iframe src="https://www.google.com/maps/embed?pb=!4v1788706122642!6m8!1m7!1sCAoSHENJQUJJaEQza0NBT21VQ2I1aE9PS0lCdHZnVTA.!2m2!1d19.0487690090339!2d73.07562291054458!3f96.07127292056961!4f10.057641291225593!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" title="360 Virtual Tour of Upper Deck Sky Lounge" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="portfolio-cta">
+            <div class="container">
+                <h3>Want Your Business Featured on Google Maps Like This?</h3>
+                <p>Book your 360° photography shoot today with Maharashtra's trusted Street View agency.</p>
+                <a href="/contact.html" class="btn-cta">Get a Free Quote</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>JHA360</h3>
+                    <p>Empowering businesses with cutting-edge digital solutions and immersive virtual experiences. Official Google Street View Trusted Agency.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/newbharatskills/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/new-bharat-skills/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.youtube.com/@NewBharatSkills" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://api.whatsapp.com/send/?phone=918369397726&text&type=phone_number&app_absent=0" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="portfolio.html" >Portfolio</a></li>
+                        <li><a href="/aireview.html">AI Review</a></li>
+                        <li><a href="/blog.html">Blog</a></li>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                        <li><a href="https://newbharatskills.in/terms-condition.html">Terms & Conditions</a></li>
+                        <li><a href="https://newbharatskills.in/privacy-policy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Mumbai, Maharashtra</li>
+                        <li><i class="fas fa-phone"></i> +91 8369397726</li>
+                        <li><i class="fas fa-envelope"></i> office@jha360.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 JHA360. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            const nav = document.querySelector('nav');
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            nav.classList.toggle('active');
+            this.setAttribute('aria-expanded', !isExpanded);
+        });
+
+        // Portfolio Category Filter Logic
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectItems = document.querySelectorAll('.portfolio-page .project');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                const filter = button.getAttribute('data-filter');
+
+                projectItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.classList.remove('hide');
+                    } else {
+                        item.classList.add('hide');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
