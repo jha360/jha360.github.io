@@ -1,0 +1,18 @@
+/* "Partner Login" call-to-action in the main navigation (links to the partner portal). */
+nav ul li a.partner-login {
+    border: 2px solid var(--primary, #0a58ca);
+    color: var(--primary, #0a58ca);
+    padding: 0.4rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+nav ul li a.partner-login::after { display: none; }
+nav ul li a.partner-login:hover,
+nav ul li a.partner-login:focus-visible {
+    background: var(--primary, #0a58ca);
+    color: #fff;
+}
+@media (max-width: 768px) {
+    nav ul li a.partner-login { display: inline-block; margin-top: 0.25rem; }
+}
